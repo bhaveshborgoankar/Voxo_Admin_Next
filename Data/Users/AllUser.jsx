@@ -1,3 +1,6 @@
+import { deleteUserAPI } from '../../Constant/APIRoutes';
+import request from '../../Utils/APIService';
+
 export const AllUserColumn = [
   {
     selector: (row) => row.user,
@@ -48,7 +51,7 @@ export const AllUserColumn = [
   },
   {
     cell: (row) => (
-      <button className='btn' onClick={() => console.log('row', row)}>
+      <button className='btn' onClick={async () => await request({ url: `${deleteUserAPI}${row._id}`, method: 'DELETE' })}>
         <span className='lnr lnr-trash'></span>
       </button>
     ),

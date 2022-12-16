@@ -1,5 +1,5 @@
 import axios from 'axios';
-const Token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk0NTIxMDYyYTIwY2NlZDEwNWNiN2YiLCJpYXQiOjE2NzEwOTk2ODcsImV4cCI6MTY3MTE4NjA4N30.Y0CGS1dPZGPOUQH9MvFnlZJyJ0FmdryXZ9lfvnhIWgU';
+const Token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk0NTIxMDYyYTIwY2NlZDEwNWNiN2YiLCJpYXQiOjE2NzExOTY0MTQsImV4cCI6MTY3MTI4MjgxNH0.EBjlUHu1lcnjHJE-mymLqxKs-MCVSmBzl1EDxr7B6e8';
 
 const client = axios.create({
   baseURL: process.env.API_URL,

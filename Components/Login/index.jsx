@@ -5,7 +5,7 @@ import { FormGroup, Input, Label } from 'reactstrap';
 import request from '../../Utils/APIService';
 import { Btn } from '../../AbstractElements';
 import { LoginAPI } from '../../Constant/APIRoutes';
-import { Forgotyourpassword, LogIn, Logins, Pleasefillthename } from '../../Constant';
+import { Email, Forgotyourpassword, LogIn, Logins, Password, Pleasefillthename } from '../../Constant';
 
 const LoginContain = () => {
   const [email, setEmail] = useState('');
@@ -33,12 +33,12 @@ const LoginContain = () => {
           </div>
           <FormGroup floating>
             <Input id='exampleEmail' name='email' placeholder='Email' type='email' onChange={(e) => setEmail(e.target.value)} />
-            <Label for='exampleEmail'>Email</Label>
+            <Label for='exampleEmail'>{Email}</Label>
           </FormGroup>
           <div className='valid-feedback'>{Pleasefillthename}</div>
           <FormGroup floating>
             <Input id='exampleEmail' name='password' placeholder='password' type='password' onChange={(e) => setPassword(e.target.value)} />
-            <Label for='exampleEmail'>Password</Label>
+            <Label for='exampleEmail'>{Password}</Label>
           </FormGroup>
           <Link href={`/forgot_password`} className='pass-forgot'>
             {Forgotyourpassword}

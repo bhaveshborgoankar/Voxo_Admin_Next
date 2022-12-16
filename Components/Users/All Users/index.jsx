@@ -6,9 +6,6 @@ import { AllUserColumn, AllUserData } from '../../../Data/Users/AllUser';
 import Pagination from '../../CommonComponents/Pagination';
 import TitleHeading from '../../CommonComponents/TitleHeading';
 const AllUsers = ({ data }) => {
-  const trimeTime = (value) => {
-    console.log('value', value.split('T')[0]);
-  };
   return (
     <>
       <TitleHeading btn={true} title={AllUserss} />
