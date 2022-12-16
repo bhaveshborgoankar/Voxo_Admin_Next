@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "type": "fashion",
+        "productname": "Slim Fit Plastic Coat",
+        "category": "Blazers",
+        "price": 120.0,
+        "productimage": "profile/1.jpg",
+        "published": true
+    },
+    {
+        "id": 2,
+        "type": "fashion",
+        "productname": "Military Ball Night Dress",
+        "price": 85.0,
+        "category": "Denium",
+        "productimage": "profile/3.jpg",
+        "published": false
+    },
+    {
+        "id": 3,
+        "type": "fashion",
+        "productname": "Full Slive Yellow Jacket",
+        "category": "Jackets",
+        "price": 69.0,
+        "productimage": "profile/4.jpg",
+        "published": false
+    },
+    {
+        "id": 4,
+        "type": "fashion",
+        "productname": "Blue Leather Jacket",
+        "category": "Sweatshirts",
+        "price": 60.0,
+        "productimage": "profile/2.jpg",
+        "published": true
+    },
+    {
+        "id": 5,
+        "type": "fashion",
+        "productname": "Blue Leather Jacket",
+        "category": "Shirts",
+        "price": 60.0,
+        "productimage": "profile/4.jpg",
+        "published": false
+    },
+    {
+        "id": 6,
+        "type": "fashion",
+        "productname": "Military Ball Night Dress",
+        "category": "T-shirts Solly",
+        "price": 85.0,
+        "productimage": "profile/3.jpg",
+        "published": true
+    },
+    {
+        "id": 7,
+        "type": "fashion",
+        "productname": "Blue Leather Jacket",
+        "category": "Sweatshirts",
+        "price": 60.0,
+        "productimage": "profile/2.jpg",
+        "published": true
+    }
+]
