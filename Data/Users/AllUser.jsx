@@ -1,4 +1,7 @@
+import Link from 'next/link';
+import { useContext } from 'react';
 import { deleteUserAPI } from '../../Constant/APIRoutes';
+import UserContext from '../../Helper/UserContext';
 import request from '../../Utils/APIService';
 
 export const AllUserColumn = [
@@ -30,30 +33,29 @@ export const AllUserColumn = [
     selector: (row) => row.is_deleted,
     name: 'Active',
   },
-  // {
-  //   selector: (row) => row.lastlogin,
-  //   name: 'Last Login',
-  // },
   {
     cell: (row) => (
-      <button className='btn' onClick={() => console.log('row', row)}>
+      <a href='#javascript'>
         <span className='lnr lnr-eye'></span>
-      </button>
+      </a>
     ),
   },
   {
     name: 'Options',
-    cell: (row) => (
-      <button className='btn' onClick={() => console.log('row', row)}>
-        <span className='lnr lnr-pencil'></span>
-      </button>
-    ),
+    cell: (row) => {
+      // setUserEdit(row);
+      return (
+        <Link href={'/add_new_user/' + row._id}>
+          <span className='lnr lnr-pencil'></span>
+        </Link>
+      );
+    },
   },
   {
     cell: (row) => (
-      <button className='btn' onClick={async () => await request({ url: `${deleteUserAPI}${row._id}`, method: 'DELETE' })}>
+      <a href='#javascript' onClick={async () => await request({ url: `${deleteUserAPI}${row._id}`, method: 'DELETE' })}>
         <span className='lnr lnr-trash'></span>
-      </button>
+      </a>
     ),
     ignoreRowClick: true,
     allowOverflow: true,

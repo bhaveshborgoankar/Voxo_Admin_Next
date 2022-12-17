@@ -4,14 +4,13 @@ import AllUsersContain from '../Components/Users/All Users';
 import { getUsersAPI } from '../Constant/APIRoutes';
 
 const AllUsers = ({ data }) => {
-  return <AllUsersContain data={data} />;
+  return <AllUsersContain data={data && data} />;
 };
 
 export async function getServerSideProps() {
   const res = await request({ url: getUsersAPI });
   const data = await res;
-
-  return { props: data.data };
+  return { props: data?.data };
 }
 
 export default AllUsers;

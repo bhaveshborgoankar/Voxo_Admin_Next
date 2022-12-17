@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Card, CardBody, Col, Container, Row, TabContent, TabPane } from 'reactstrap';
 import { AddNewUser } from '../../../Constant';
+import UserContext from '../../../Helper/UserContext';
 import TitleHeading from '../../CommonComponents/TitleHeading';
 import AccountTabData from './AccountTabData';
 import PermissionTabData from './PermissionTabData';
 import UserNav from './UserNav';
-const AddNewUsersContains = () => {
+const AddNewUsersContains = (props) => {
+  console.log(props._id, 'props._id');
   const [activeTab, setActiveTab] = useState(1);
+  const { userEdit } = useContext(UserContext);
+  console.log('userEdit', userEdit);
   return (
     <>
       <TitleHeading title={AddNewUser} />

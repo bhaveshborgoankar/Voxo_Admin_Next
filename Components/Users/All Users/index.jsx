@@ -1,7 +1,7 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
-import { Card, CardBody, Col, Container, Row } from 'reactstrap';
-import { AllUserss, items } from '../../../Constant';
+import { Card, CardBody, Col, Container, Input, Row } from 'reactstrap';
+import { AllUserss } from '../../../Constant';
 import { AllUserColumn, AllUserData } from '../../../Data/Users/AllUser';
 import Pagination from '../../CommonComponents/Pagination';
 import TitleHeading from '../../CommonComponents/TitleHeading';
@@ -17,15 +17,19 @@ const AllUsers = ({ data }) => {
                 <div>
                   <div className='table-responsive table-desi'>
                     <DataTable
-                      data={data.map((elem) => ({
-                        ...elem,
-                        created_at: elem.created_at.split('T')[0],
-                        is_deleted: (
-                          <div className='form-check form-switch'>
-                            <input className='form-check-input' type='checkbox' checked={elem.is_deleted} id='flexSwitchCheckDefault' />
-                          </div>
-                        ),
-                      }))}
+                      data={
+                        data
+                          ? data.map((elem) => ({
+                              ...elem,
+                              created_at: elem.created_at.split('T')[0],
+                              is_deleted: (
+                                <div className='form-check form-switch'>
+                                  <Input className='form-check-input' type='checkbox' defaultChecked={elem.is_deleted} id='flexSwitchCheckDefault' />
+                                </div>
+                              ),
+                            }))
+                          : 'Please add data'
+                      }
                       columns={AllUserColumn}
                     />
                     {/* <DataTable data={data.map((item) => ({ ...item, user: <img src={item.image} /> }))} columns={AllUserColumn} /> */}
