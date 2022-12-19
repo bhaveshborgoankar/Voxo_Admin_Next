@@ -45,7 +45,7 @@ export const AllUserColumn = [
     cell: (row) => {
       // setUserEdit(row);
       return (
-        <Link href={'/add_new_user/' + row._id}>
+        <Link href={`/user/edit/${row._id}`}>
           <span className='lnr lnr-pencil'></span>
         </Link>
       );

@@ -1,19 +1,19 @@
 import React, { useContext, useState } from 'react';
 import { Card, CardBody, Col, Container, Row, TabContent, TabPane } from 'reactstrap';
-import { AddNewUser } from '../../../Constant';
+import { EditNewUser } from '../../../Constant';
 import UserContext from '../../../Helper/UserContext';
 import TitleHeading from '../../CommonComponents/TitleHeading';
-import AccountTabData from './AccountTabData';
-import PermissionTabData from './PermissionTabData';
-import UserNav from './UserNav';
-const AddNewUsersContains = (props) => {
-  console.log(props, 'props._id');
+import EditForm from './EditForm';
+// import AccountTabData from './AccountTabData';
+// import PermissionTabData from './PermissionTabData';
+// import UserNav from './UserNav';
+
+const EditUser = ({ data }) => {
+  console.log('data', data);
   const [activeTab, setActiveTab] = useState(1);
-  const { userEdit } = useContext(UserContext);
-  console.log('userEdit', userEdit);
   return (
     <>
-      <TitleHeading title={AddNewUser} />
+      <TitleHeading title={EditNewUser} />
       <Container fluid={true}>
         <Row>
           <Col xs='12'>
@@ -21,14 +21,9 @@ const AddNewUsersContains = (props) => {
               <Col sm='12'>
                 <Card>
                   <CardBody>
-                    <UserNav setActiveTab={setActiveTab} activeTab={activeTab} />
                     <TabContent className='tab-content' activeTab={activeTab}>
                       <TabPane className={`fade ${activeTab === 1 ? 'show active' : ''}`}>
-                        <AccountTabData />
-                      </TabPane>
-
-                      <TabPane className={`fade ${activeTab === 2 ? 'show active' : ''}`}>
-                        <PermissionTabData />
+                        <EditForm data={data} />
                       </TabPane>
                     </TabContent>
                   </CardBody>
@@ -41,4 +36,4 @@ const AddNewUsersContains = (props) => {
     </>
   );
 };
-export default AddNewUsersContains;
+export default EditUser;

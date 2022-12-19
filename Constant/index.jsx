@@ -8,6 +8,7 @@ export const Addtask = 'Add task';
 export const RecentActivitys = 'Recent Activity';
 export const BrowserStates = 'Browser States';
 export const AddNewUser = 'Add New User';
+export const EditNewUser = 'Edit User';
 export const AddNew = 'Add New';
 export const AllUserss = 'All Users';
 export const Account = 'Account';

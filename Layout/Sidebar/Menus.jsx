@@ -23,12 +23,12 @@ export const AllMenus = [
     children: [
       {
         name: 'All users',
-        path: '/all_users',
+        path: '/users',
         type: 'link',
       },
       {
         name: 'Add new user',
-        path: '/add_new_user',
+        path: '/user/add',
         type: 'link',
       },
     ],

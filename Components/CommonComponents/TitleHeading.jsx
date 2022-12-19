@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { PlusSquare } from 'react-feather';
 import { AddNew } from '../../Constant';
@@ -9,10 +10,10 @@ const TitleHeading = ({ btn, title }) => {
         <div className='title-header title-header-1'>
           <h5>{title}</h5>
           <form className='d-inline-flex'>
-            <a href='#javascript' className='align-items-center btn btn-theme'>
+            <Link href='/user/add/' className='align-items-center btn btn-theme'>
               <PlusSquare />
               {AddNew}
-            </a>
+            </Link>
           </form>
         </div>
       ) : (
