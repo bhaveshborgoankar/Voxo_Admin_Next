@@ -62,7 +62,7 @@ const HeaderNav = () => {
           </li>
           <li>
             <div className='media'>
-              <img className='img-fluid rounded-circle me-3' src='assets/images/user/1.jpg' alt='user1' />
+              <img className='img-fluid rounded-circle me-3' src='/assets/images/user/1.jpg' alt='user1' />
               <div className='status-circle online'></div>
               <div className='media-body'>
                 <span>Erica Hughes</span>
@@ -73,7 +73,7 @@ const HeaderNav = () => {
           </li>
           <li>
             <div className='media'>
-              <img className='img-fluid rounded-circle me-3' src='assets/images/user/2.png' alt='user2' />
+              <img className='img-fluid rounded-circle me-3' src='/assets/images/user/2.png' alt='user2' />
               <div className='status-circle online'></div>
               <div className='media-body'>
                 <span>Kori Thomas</span>
@@ -84,7 +84,7 @@ const HeaderNav = () => {
           </li>
           <li>
             <div className='media'>
-              <img className='img-fluid rounded-circle me-3' src='assets/images/user/3.png' alt='user3' />
+              <img className='img-fluid rounded-circle me-3' src='/assets/images/user/3.png' alt='user3' />
               <div className='status-circle offline'></div>
               <div className='media-body'>
                 <span>Ain Chavez</span>

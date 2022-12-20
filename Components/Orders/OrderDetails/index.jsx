@@ -1,15 +1,15 @@
 import React from 'react';
-import { Card, CardBody, Col, Container, Row, Table } from 'reactstrap';
-import { OrderDetailsData } from '../../../Data/Orders';
-import OrderDetailsHead from './OrderDetailsHead';
-import OrderFooter from './OrderFooter';
-import OrderSummary from './OrderSummary';
-import TableHead from './TableHead';
+// import { Card, CardBody, Col, Container, Row, Table } from 'reactstrap';
+// import { OrderDetailsData } from '../../../Data/Orders';
+// import OrderDetailsHead from './OrderDetailsHead';
+// import OrderFooter from './OrderFooter';
+// import OrderSummary from './OrderSummary';
+// import TableHead from './TableHead';
 
 const OrderDetails = () => {
   return (
     <>
-      <OrderDetailsHead />
+      {/* <OrderDetailsHead />
       <Container fluid={true}>
         <Row>
           <Col sm='12'>
@@ -57,7 +57,7 @@ const OrderDetails = () => {
             </Card>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </>
   );
 };

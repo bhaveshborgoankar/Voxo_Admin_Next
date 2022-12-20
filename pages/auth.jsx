@@ -5,10 +5,3 @@ const Auth = () => {
 };
 
 export default Auth;
-// Auth.getLayout = function getLayout(Auth) {
-//   return (
-//     <>
-//       <div className='auth'>{Auth}</div>
-//     </>
-//   );
-// };

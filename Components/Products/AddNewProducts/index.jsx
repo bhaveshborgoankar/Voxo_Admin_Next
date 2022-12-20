@@ -11,19 +11,19 @@ import ProductInformation from './ProductInformation';
 import ProductVideo from './ProductVideo';
 import ShippingData from './ShippingData';
 import CreateContextToggle from '../../../Helper/ToggleContext';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 const AddnewProductsContain = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { setGetProducts } = useContext(CreateContextToggle);
   const onSubmit = (data) => {
     if (data !== '') {
       setGetProducts((prev) => ({ ...prev, ...data }));
-      navigate('/products');
+      // navigate('/products');
     } else {
       errors.showMessages();
     }

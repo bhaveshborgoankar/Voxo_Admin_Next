@@ -19,15 +19,17 @@ const AllUsers = ({ data }) => {
                     <DataTable
                       data={
                         data
-                          ? data.map((elem) => ({
-                              ...elem,
-                              created_at: elem.created_at.split('T')[0],
-                              is_deleted: (
-                                <div className='form-check form-switch'>
-                                  <Input className='form-check-input' type='checkbox' defaultChecked={elem.is_deleted} id='flexSwitchCheckDefault' />
-                                </div>
-                              ),
-                            }))
+                          ? data.filter((elem) => {
+                              if (!elem.is_deleted) {
+                                elem.created_at = elem.created_at.split('T')[0];
+                                elem.activeStatus = (
+                                  <div className='form-check form-switch'>
+                                    <span>{'Active'}</span>
+                                  </div>
+                                );
+                                return true;
+                              }
+                            })
                           : 'Please add data'
                       }
                       columns={AllUserColumn}

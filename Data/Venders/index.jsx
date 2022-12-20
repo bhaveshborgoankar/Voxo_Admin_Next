@@ -1,5 +1,5 @@
+import Link from 'next/link';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import user1 from '../../assets/images/users/1.jpg';
 import user2 from '../../assets/images/users/2.jpg';
 import user3 from '../../assets/images/users/3.jpg';

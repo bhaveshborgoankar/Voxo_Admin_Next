@@ -1,16 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { Card, CardBody, Col, Container, Row, TabContent, TabPane } from 'reactstrap';
+import React from 'react';
+import { Card, CardBody, Col, Container, Row } from 'reactstrap';
 import { AddNewUser } from '../../../Constant';
-import UserContext from '../../../Helper/UserContext';
 import TitleHeading from '../../CommonComponents/TitleHeading';
 import AccountTabData from './AccountTabData';
-import PermissionTabData from './PermissionTabData';
-import UserNav from './UserNav';
-const AddNewUsersContains = (props) => {
-  console.log(props, 'props._id');
-  const [activeTab, setActiveTab] = useState(1);
-  const { userEdit } = useContext(UserContext);
-  console.log('userEdit', userEdit);
+const AddNewUsersContains = () => {
   return (
     <>
       <TitleHeading title={AddNewUser} />
@@ -21,16 +14,7 @@ const AddNewUsersContains = (props) => {
               <Col sm='12'>
                 <Card>
                   <CardBody>
-                    <UserNav setActiveTab={setActiveTab} activeTab={activeTab} />
-                    <TabContent className='tab-content' activeTab={activeTab}>
-                      <TabPane className={`fade ${activeTab === 1 ? 'show active' : ''}`}>
-                        <AccountTabData />
-                      </TabPane>
-
-                      <TabPane className={`fade ${activeTab === 2 ? 'show active' : ''}`}>
-                        <PermissionTabData />
-                      </TabPane>
-                    </TabContent>
+                    <AccountTabData />
                   </CardBody>
                 </Card>
               </Col>

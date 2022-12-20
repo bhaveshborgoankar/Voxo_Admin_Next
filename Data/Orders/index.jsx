@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import Profile1 from '../../assets/images/profile/1.jpg';
-import Profile2 from '../../assets/images/profile/2.jpg';
-import Profile3 from '../../assets/images/profile/3.jpg';
-import Profile4 from '../../assets/images/profile/4.jpg';
+import Link from 'next/link';
+// import Profile1 from '/assets/images/profile/1.jpg';
+// import Profile2 from '/assets/images/profile/2.jpg';
+// import Profile3 from '/assets/images/profile/3.jpg';
+// import Profile4 from '/assets/images/profile/4.jpg';
 export const OrderListColumns = [
   {
     name: 'Order Image',
@@ -35,7 +35,7 @@ export const OrderListColumns = [
 ];
 export const OrderListData = [
   {
-    image: <img src={Profile1} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/1.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 406-4883635',
     date: 'Jul 20, 2021',
     payment: 'Paypal',
@@ -64,7 +64,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile2} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/2.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 524-655784',
     date: 'May 29, 2022',
     payment: 'Paypal',
@@ -93,7 +93,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile3} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/3.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 365-8574789',
     date: 'April 24, 2022',
     payment: 'Paypal',
@@ -122,7 +122,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile4} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/4.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 025-654789',
     date: 'June 01, 2022',
     payment: 'Stripe',
@@ -151,7 +151,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile1} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/1.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 685-963258',
     date: 'Jan 12, 2022',
     payment: 'Stripe',
@@ -180,7 +180,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile1} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/1.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 685-963258',
     date: 'Jan 12, 2022',
     payment: 'Stripe',
@@ -209,7 +209,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile2} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/2.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 685-963258',
     date: 'Aug 31, 2022',
     payment: 'Paypal',
@@ -238,7 +238,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile3} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/3.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 357-9512345',
     date: 'March 21, 2022',
     payment: 'Paypal',
@@ -267,7 +267,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile4} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/4.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 123-8978923',
     date: 'Feb 09, 2022',
     payment: 'Paypal',
@@ -296,7 +296,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile1} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/1.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 654-9632558',
     date: 'Aug 31, 2022',
     payment: 'Stripe',
@@ -325,7 +325,7 @@ export const OrderListData = [
     ),
   },
   {
-    image: <img src={Profile2} alt='users' href='#javascript' width={70} />,
+    image: <img src={'/assets/images/profile/2.jpg'} alt='users' href='#javascript' width={70} />,
     code: '+ 321-7412582',
     date: 'Nov 07, 2022',
     payment: 'Stripe',
@@ -360,7 +360,7 @@ export const OrderListData = [
 export const OrderDetailsData = [
   {
     id: 1,
-    img: Profile1,
+    img: '/assets/images/profile/1.jpg',
     head1: 'Product Name',
     Subhead1: 'Outwear & Coats',
     head2: 'Quantity',
@@ -370,7 +370,7 @@ export const OrderDetailsData = [
   },
   {
     id: 2,
-    img: Profile2,
+    img: '/assets/images/profile/2.jpg',
     head1: 'Product Name',
     Subhead1: 'Slim Fit Plastic Coat',
     head2: 'Quantity',
@@ -380,7 +380,7 @@ export const OrderDetailsData = [
   },
   {
     id: 3,
-    img: Profile3,
+    img: '/assets/images/profile/3.jpg',
     head1: 'Product Name',
     Subhead1: `Men's Sweatshirt`,
     head2: 'Quantity',

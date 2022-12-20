@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { deleteUserAPI } from '../../Constant/APIRoutes';
 import UserContext from '../../Helper/UserContext';
 import request from '../../Utils/APIService';
+import DeleteHandler from './DeleteHandler';
 
 export const AllUserColumn = [
   {
@@ -30,7 +31,7 @@ export const AllUserColumn = [
     name: 'Created On',
   },
   {
-    selector: (row) => row.is_deleted,
+    selector: (row) => row.activeStatus,
     name: 'Active',
   },
   {
@@ -42,21 +43,14 @@ export const AllUserColumn = [
   },
   {
     name: 'Options',
-    cell: (row) => {
-      // setUserEdit(row);
-      return (
-        <Link href={`/user/edit/${row._id}`}>
-          <span className='lnr lnr-pencil'></span>
-        </Link>
-      );
-    },
+    cell: (row) => (
+      <Link href={`/user/edit/${row._id}`}>
+        <span className='lnr lnr-pencil'></span>
+      </Link>
+    ),
   },
   {
-    cell: (row) => (
-      <a href='#javascript' onClick={async () => await request({ url: `${deleteUserAPI}${row._id}`, method: 'DELETE' })}>
-        <span className='lnr lnr-trash'></span>
-      </a>
-    ),
+    cell: (row) => <DeleteHandler row={row} />,
     ignoreRowClick: true,
     allowOverflow: true,
     button: true,

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import CreateContextToggle from './index';
 
 const ToggleProvider = (props) => {
+  const [deleteModal, setDeleteModal] = useState({ isDelete: false, value: '' });
   const [sidebarToggle, setSidebarToggle] = useState(false);
   const [getProducts, setGetProducts] = useState({
     productimage: <img src={'/assets/images/users/1.jpg'} className='img-fluid' width={70} alt='' />,
@@ -29,6 +30,6 @@ const ToggleProvider = (props) => {
     ),
   });
 
-  return <CreateContextToggle.Provider value={{ ...props, sidebarToggle, getProducts, setGetProducts, setSidebarToggle }}>{props.children}</CreateContextToggle.Provider>;
+  return <CreateContextToggle.Provider value={{ ...props, sidebarToggle, getProducts, setGetProducts, setSidebarToggle, deleteModal, setDeleteModal }}>{props.children}</CreateContextToggle.Provider>;
 };
 export default ToggleProvider;

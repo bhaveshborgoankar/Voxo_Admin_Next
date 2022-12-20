@@ -1,8 +1,9 @@
 import '../public/assets/css/linearicon.css';
 import '../public/assets/scss/app.scss';
+import { CookiesProvider } from 'react-cookie';
+import { ToastContainer } from 'react-toastify';
 import Layout from '../Layout/index';
 import ToggleProvider from '../Helper/ToggleContext/ToggleProvider';
-import { CookiesProvider } from 'react-cookie';
 import UserProvider from '../Helper/UserContext/UserProvider';
 
 const MyApp = ({ Component, pageProps }) => {
@@ -14,6 +15,7 @@ const MyApp = ({ Component, pageProps }) => {
           <ToggleProvider>{getLayout(<Component {...pageProps} />)}</ToggleProvider>
         </CookiesProvider>
       </UserProvider>
+      <ToastContainer />
     </>
   );
 };
