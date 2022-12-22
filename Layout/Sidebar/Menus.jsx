@@ -198,13 +198,13 @@ export const AllMenus = [
   {
     name: 'Log In',
     icon: <LogIn />,
-    path: '/login',
+    path: '/auth/login',
     type: 'link',
   },
   {
     name: 'Forgot Password',
     icon: <Key />,
-    path: '/forgot_password',
+    path: '/auth/forgot_password',
     type: 'link',
   },
   {

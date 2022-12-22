@@ -22,11 +22,7 @@ const AllUsers = ({ data }) => {
                           ? data.filter((elem) => {
                               if (!elem.is_deleted) {
                                 elem.created_at = elem.created_at.split('T')[0];
-                                elem.activeStatus = (
-                                  <div className='form-check form-switch'>
-                                    <span>{'Active'}</span>
-                                  </div>
-                                );
+                                elem.activeStatus = <span>{'Active'}</span>;
                                 return true;
                               }
                             })

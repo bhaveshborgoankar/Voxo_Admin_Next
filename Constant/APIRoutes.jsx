@@ -1,5 +1,7 @@
 export const LoginAPI = '/api/auth/login';
 export const ForgotPasswordAPI = '/api/auth/forgetPassword';
+export const VerifyOTPAPI = '/api/auth/verifyOtp';
+export const UpdatePasswordAPI = '/api/auth/resetPassword';
 
 export const getUsersAPI = '/api/user/users';
 export const createUserAPI = '/api/user/create/';

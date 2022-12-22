@@ -1,8 +1,4 @@
 import Link from 'next/link';
-import { useContext } from 'react';
-import { deleteUserAPI } from '../../Constant/APIRoutes';
-import UserContext from '../../Helper/UserContext';
-import request from '../../Utils/APIService';
 import DeleteHandler from './DeleteHandler';
 
 export const AllUserColumn = [
@@ -32,7 +28,7 @@ export const AllUserColumn = [
   },
   {
     selector: (row) => row.activeStatus,
-    name: 'Active',
+    name: 'Status',
   },
   {
     cell: (row) => (
