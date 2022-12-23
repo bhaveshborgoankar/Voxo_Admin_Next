@@ -1,21 +1,22 @@
 import React, { useContext, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useCookies } from 'react-cookie';
+import Cookies from 'js-cookie';
 import { Form, FormGroup, Input, Label } from 'reactstrap';
 import request from '../../Utils/APIService';
 import { Btn } from '../../AbstractElements';
 import { LoginAPI } from '../../Constant/APIRoutes';
 import { Email, Forgotyourpassword, LogIn, Logins, Password, Pleasefillthename } from '../../Constant';
 import UserContext from '../../Helper/UserContext';
+import ErrorBox from '../CommonComponents/ErrorBox';
 
 const LoginContain = () => {
   const router = useRouter();
+  const { uat, setUat, active, setActive } = useContext(UserContext);
   const [email, setEmail] = useState('');
-  const { setUat } = useContext(UserContext);
   const [password, setPassword] = useState('');
-  // const [cookies, setCookie] = useCookies(['uat']);
 
+  // console.log('setUat', setUat, 'uat', uat);
   const loginAuth = async (event, email, password) => {
     event.preventDefault();
     if (email !== '' && password !== '') {
@@ -25,9 +26,12 @@ const LoginContain = () => {
       };
       var Res = await request({ url: LoginAPI, method: 'POST', data: data });
       if (Res?.status == 200) {
+        Cookies.set('uat', Res?.data?.token);
+        // setUat('uat', Res?.data?.token);
+        setActive({ status: false });
         router.push('/');
-        setUat('uat', Res?.data?.token);
-      }
+        console.log('Res123456789', Res);
+      } else setActive({ status: true, title: Res?.data?.msg });
     } else {
       console.log('Please add data first');
     }
@@ -35,15 +39,9 @@ const LoginContain = () => {
   return (
     <>
       <div className='box-wrapper'>
-        <div className='error-box'>
-          {/* <Icon name="clarity:error-standard-line" color="red" /> */}
-          <div>
-            <h4>{`{$t(heading)}`}</h4>
-            <p>{`{$t(message)}`}</p>
-          </div>
-        </div>
         <div className='login-section'>
           <div className='materialContainer'>
+            <ErrorBox title={'d'} subTitle={'dddd'} active={active} />
             <div className='box'>
               <Form onSubmit={(e) => loginAuth(e, email, password)}>
                 <div className='login-title mb-5'>
@@ -72,13 +70,6 @@ const LoginContain = () => {
           </div>
         </div>
       </div>
-      {/* <div class="error-box">
-        <Icon name="clarity:error-standard-line" color="red" />
-      <div>
-        <h4>{{$t(heading)}}</h4>
-        <p>{{$t(message)}}</p>
-      </div>
-    </div> */}
     </>
   );
 };

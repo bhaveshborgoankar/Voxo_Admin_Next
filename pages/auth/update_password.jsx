@@ -1,7 +1,10 @@
-import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
-import { Form, Input } from 'reactstrap';
+import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
+import { Form, FormGroup, Input, Label } from 'reactstrap';
 import { Btn } from '../../AbstractElements';
+import ErrorBox from '../../Components/CommonComponents/ErrorBox';
+import { ConfirmPasswords, Password, UpdatePasswords } from '../../Constant';
 import { UpdatePasswordAPI } from '../../Constant/APIRoutes';
 import UserContext from '../../Helper/UserContext';
 import request from '../../Utils/APIService';
@@ -10,7 +13,7 @@ const UpdatePassword = () => {
   const router = useRouter();
   const [newPassword, setNewPassword] = useState('');
   const [UpdatePassword, setUpdatePassword] = useState();
-  const { fpEmailCookie, removeFpEmailCookie, voCookie, removeVoCookie } = useContext(UserContext);
+  const { removeFpEmailCookie, removeVoCookie, setActive, active } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,34 +22,36 @@ const UpdatePassword = () => {
       const updatedData = {
         password: newPassword,
         confirm_password: UpdatePassword,
-        email: fpEmailCookie?.fpemail,
-        otp: voCookie?.vo,
+        email: Cookies.get('fpemail'),
+        otp: Cookies.get('vo'),
       };
       const Res = await request({ url: UpdatePasswordAPI, method: 'POST', data: updatedData });
 
       if (Res.status === 200) {
-        removeFpEmailCookie('fpemail');
-        removeVoCookie('vo');
+        Cookies.remove('fpemail'), Cookies.remove('vo'), setActive({ status: false });
         router.push('/auth/login');
-      }
+      } else setActive({ status: true, title: Res?.data?.msg });
     } else {
-      alert('Password not matched!');
+      setActive({ status: true, title: 'Something went wrong' });
     }
   };
   return (
     <div className='login-section'>
       <div className='materialContainer'>
+        <ErrorBox active={active} />
         <div className='box'>
-          <div className='login-title'>
-            <h2>{'Update Password'}</h2>
+          <div className='login-title mb-4'>
+            <h2>{UpdatePasswords}</h2>
           </div>
           <Form onSubmit={(e) => handleSubmit(e)}>
-            <div className='input'>
+            <FormGroup floating>
               <Input type='password' name='password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)} placeholder='Enter password' />
-            </div>
-            <div className='input'>
-              <Input type='password' name='password' value={UpdatePassword} onChange={(e) => setUpdatePassword(e.target.value)} placeholder='Enter Confirm Password' />
-            </div>
+              <Label for='exampleEmail'>{Password}</Label>
+            </FormGroup>
+            <FormGroup floating>
+              <Input type='password' name='confirm_password' value={UpdatePassword} onChange={(e) => setUpdatePassword(e.target.value)} placeholder='Enter Confirm Password' />
+              <Label for='exampleEmail'>{ConfirmPasswords}</Label>
+            </FormGroup>
 
             <div className='button login button-1'>
               <Btn attrBtn={{ type: 'submit' }}>

@@ -6,16 +6,17 @@ import { Country, EmailAddress, Name, Phone, Submit, UserInformation } from '../
 import { editUserAPI } from '../../../Constant/APIRoutes';
 import request from '../../../Utils/APIService';
 const EditForm = ({ data }) => {
+  console.log('data', data);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      country: data.country,
+      name: data?.name,
+      email: data?.email,
+      phone: data?.phone,
+      country: data?.country,
     },
   });
   const editUser = async (formData) => {

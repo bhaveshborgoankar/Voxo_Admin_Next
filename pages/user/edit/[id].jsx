@@ -9,8 +9,8 @@ const UserEdit = ({ data }) => {
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
-
-  const res = await request({ url: `${getSingleUserAPI}${id}` });
+  const unique = context?.req?.cookies?.uat;
+  const res = await request({ url: `${getSingleUserAPI}${id}`, token: unique });
   const data = res?.data;
 
   return { props: data };

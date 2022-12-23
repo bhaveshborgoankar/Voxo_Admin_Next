@@ -1,7 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 import { Archive, LogOut, Phone, Settings, Users } from 'react-feather';
 
 const HeaderNav = () => {
+  const router = useRouter();
+  const LogoutUser = () => {
+    Cookies.remove('uat');
+    router.push('/auth/login');
+  };
   return (
     <ul className='nav-menus'>
       <li>
@@ -141,11 +148,11 @@ const HeaderNav = () => {
               <span>Settings</span>
             </a>
           </li>
-          <li>
-            <a href='#javascript'>
-              <LogOut />
-              <span>Log out</span>
-            </a>
+          <li onClick={() => LogoutUser()}>
+            {/* <Link href='/auth/login'> */}
+            <LogOut />
+            <span>Log out</span>
+            {/* </Link> */}
           </li>
         </ul>
       </li>
