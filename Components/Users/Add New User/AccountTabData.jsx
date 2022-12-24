@@ -8,7 +8,6 @@ import request from '../../../Utils/APIService';
 import ErrorHandle from '../../CommonComponents/ErrorHandle';
 import { ConfirmPassword, Country, EmailAddress, FirstName, Password, Phone, Submit } from '../../../Constant';
 import { Btn } from '../../../AbstractElements';
-import FormInput from '../../CommonComponents/FormInput';
 
 const AccountTabData = () => {
   const router = useRouter();
@@ -19,23 +18,22 @@ const AccountTabData = () => {
     formState: { errors },
   } = useForm();
   const addNewUser = async (formData) => {
-    console.log('formData123', formData);
     if (formData) {
       const Res = await request({ url: createUserAPI, method: 'POST', data: formData });
       if (Res.status == 200) {
+        reset();
         toast.success('Product Added');
         router.push('/users');
       } else {
         toast.warning('Someting went wrong');
       }
-      reset({ name: '', password: '', confirm_password: '', email: '', phone: '', country: '' });
     }
   };
   return (
     <Form className='theme-form theme-form-2 mega-form' onSubmit={handleSubmit(addNewUser)}>
       <Row>
         <Row className='mb-4 align-items-center'>
-          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{FirstName}</Label>
+          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{FirstName}*</Label>
           <Col md='9' lg='10'>
             <input className='form-control' type='text' name='name' {...register('name', { required: true })} />
             <ErrorHandle errors={errors.name} message={'Name is required'} />
@@ -43,23 +41,24 @@ const AccountTabData = () => {
         </Row>
 
         <Row className='mb-4 align-items-center'>
-          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Password}</Label>
+          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Password}*</Label>
           <Col md='9' lg='10'>
-            <input className='form-control' type='password' name='password' {...register('password', { required: true, min: 8 })} />
-            <ErrorHandle errors={errors.password} message={'Password is required'} />
+            <input className='form-control' type='password' name='password' {...register('password', { minLength: 8 })} />
+            {console.log('password', errors)}
+            <ErrorHandle errors={errors.password} message={'Minimum length is 8'} />
           </Col>
         </Row>
 
         <Row className='mb-4 align-items-center'>
-          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{ConfirmPassword}</Label>
+          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{ConfirmPassword}*</Label>
           <Col md='9' lg='10'>
-            <input className='form-control' type='password' name='confirm_password' {...register('confirm_password', { required: true, min: 8 })} />
-            <ErrorHandle errors={errors.confirm_password} message={'confirm_password is required'} />
+            <input className='form-control' type='password' name='confirm_password' {...register('confirm_password', { minLength: 8 })} />
+            <ErrorHandle errors={errors.confirm_password} message={'Minimum length is 8'} />
           </Col>
         </Row>
 
         <Row className='mb-4 align-items-center'>
-          <Label className='col-lg-2 col-md-3 col-form-label form-label-title'>{EmailAddress}</Label>
+          <Label className='col-lg-2 col-md-3 col-form-label form-label-title'>{EmailAddress}*</Label>
           <Col md='9' lg='10'>
             <input className='form-control' type='email' name='email' {...register('email', { required: true })} />
             <ErrorHandle errors={errors.email} message={'Email is required'} />
@@ -67,10 +66,10 @@ const AccountTabData = () => {
         </Row>
 
         <Row className='mb-4 align-items-center'>
-          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Phone}</Label>
+          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Phone}*</Label>
           <Col md='9' lg='10'>
-            <input className='form-control' type='number' name='phone' {...register('phone', { required: true })} />
-            <ErrorHandle errors={errors.phone} message={'Phone is required'} />
+            <input className='form-control' type='number' name='phone' {...register('phone', { required: true, min: 10 })} />
+            <ErrorHandle errors={errors.phone} message={'Phone number must be contain minimun 10 digit.'} />
           </Col>
         </Row>
 

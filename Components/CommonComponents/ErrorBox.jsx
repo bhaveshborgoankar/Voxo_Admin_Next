@@ -7,7 +7,6 @@ const ErrorBox = ({ active }) => {
       <AlertCircle />
       <div>
         <h4>{active.title}</h4>
-        {/* <p>{subTitle}</p> */}
       </div>
     </div>
   );

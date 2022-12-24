@@ -1,6 +1,8 @@
+import Cookies from 'js-cookie';
 import React, { useState } from 'react';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { Btn } from '../../AbstractElements';
+import { Areyousure, ConfirmDelete, No, Yes } from '../../Constant';
 import { deleteUserAPI } from '../../Constant/APIRoutes';
 import request from '../../Utils/APIService';
 
@@ -20,11 +22,11 @@ const DeleteHandler = ({ row }) => {
         <span className='lnr lnr-trash'></span>
       </a>
       <Modal isOpen={isOpen} toggle={toggle}>
-        <ModalHeader toggle={toggle}>Confirm Delete</ModalHeader>
-        <ModalBody>Are you sure?</ModalBody>
+        <ModalHeader toggle={toggle}>{ConfirmDelete}</ModalHeader>
+        <ModalBody>{Areyousure}</ModalBody>
         <ModalFooter>
-          <Btn attrBtn={{ color: 'primary', onClick: () => onUserDelete() }}>Yes</Btn>
-          <Btn attrBtn={{ color: 'warning', onClick: toggle }}>No</Btn>
+          <Btn attrBtn={{ color: 'primary', onClick: () => onUserDelete() }}>{Yes}</Btn>
+          <Btn attrBtn={{ color: 'warning', onClick: toggle }}>{No}</Btn>
         </ModalFooter>
       </Modal>
     </>

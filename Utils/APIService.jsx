@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const client = axios.create({
   baseURL: process.env.API_URL,
@@ -6,9 +7,11 @@ const client = axios.create({
     Accept: 'application/json',
   },
 });
-
+const uat = Cookies?.get('uat');
 const request = async ({ ...options }) => {
-  client.defaults.headers.common.Authorization = `Bearer ${options.token}`;
+  if (!options.method) {
+    client.defaults.headers.common.Authorization = `Bearer ${options.token}`;
+  } else client.defaults.headers.common.Authorization = `Bearer ${uat}`;
 
   const onSuccess = (response) => {
     return response;

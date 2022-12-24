@@ -1,12 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { Col, Form, Label, Row } from 'reactstrap';
 import { Btn } from '../../../AbstractElements';
 import { Country, EmailAddress, Name, Phone, Submit, UserInformation } from '../../../Constant';
 import { editUserAPI } from '../../../Constant/APIRoutes';
 import request from '../../../Utils/APIService';
+import ErrorHandle from '../../CommonComponents/ErrorHandle';
 const EditForm = ({ data }) => {
-  console.log('data', data);
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -20,7 +22,6 @@ const EditForm = ({ data }) => {
     },
   });
   const editUser = async (formData) => {
-    console.log('formData', formData);
     if (formData) {
       const editedData = {
         name: formData.name,
@@ -29,7 +30,9 @@ const EditForm = ({ data }) => {
         country: formData.country,
       };
       const Res = await request({ url: `${editUserAPI}/${data._id}`, method: 'PUT', data: editedData });
-      console.log('ResRes', Res);
+      if (Res.status === 200) {
+        router.push('/users');
+      }
     }
   };
   return (
@@ -62,7 +65,8 @@ const EditForm = ({ data }) => {
         <Row className='mb-4 align-items-center'>
           <Label className='col-lg-2 col-md-3 col-form-label form-label-title'>{Phone}</Label>
           <Col md='9' lg='10'>
-            <input className='form-control' type='text' name='phone' {...register('phone', { required: true })} />
+            <input className='form-control' type='text' name='phone' {...register('phone', { minLength: 10 })} />
+            <ErrorHandle errors={errors.phone} message={'Minimum length is 10'} />
           </Col>
         </Row>
         <Btn attrBtn={{ className: 'btn-theme theme-bg-color mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>
