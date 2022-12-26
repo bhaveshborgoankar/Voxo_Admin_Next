@@ -1,4 +1,4 @@
-import { Home, Users, Archive, Box, Tag, Star, Phone, Settings, List, Key, AlignLeft, FileText, LogIn, PlusCircle } from 'react-feather';
+import { Home, Users, Archive, Box, Settings, Clipboard } from 'react-feather';
 
 export const AllMenus = [
   {
@@ -34,14 +34,6 @@ export const AllMenus = [
     ],
   },
   {
-    name: 'Application',
-    subHeading: 'Ready To Use Apps',
-    type: 'title',
-    mainClasses: 'sidebar-main-title sidebar-main-title-2',
-    class: 'sidebar-main-title sidebar-main-title-2',
-    application: true,
-  },
-  {
     name: 'Orders',
     icon: <Archive />,
     active: false,
@@ -64,40 +56,18 @@ export const AllMenus = [
     ],
   },
   {
-    name: 'Vendors',
-    icon: <Users />,
+    name: 'Categories',
+    icon: <Clipboard />,
     active: false,
     children: [
       {
-        name: 'Vendor List',
-        path: '/vendor_list',
+        name: 'All Categories',
+        path: '/users',
         type: 'link',
       },
       {
-        name: 'Create Vendor',
-        path: '/create_vendor',
-        type: 'link',
-      },
-    ],
-  },
-  {
-    name: 'Localization',
-    icon: <Users />,
-    active: false,
-    children: [
-      {
-        name: 'Translation',
-        path: '/translation',
-        type: 'link',
-      },
-      {
-        name: 'Currency Rate',
-        path: '/currency_rate',
-        type: 'link',
-      },
-      {
-        name: 'Taxes',
-        path: '/taxes',
+        name: 'Add new category',
+        path: '/user/add',
         type: 'link',
       },
     ],
@@ -120,58 +90,6 @@ export const AllMenus = [
     ],
   },
   {
-    name: 'Menus',
-    icon: <AlignLeft />,
-    active: false,
-    children: [
-      {
-        name: 'Menu Lists',
-        path: '/menu_lists',
-        type: 'link',
-      },
-      {
-        name: 'Create Menu',
-        path: '/create_menu',
-        type: 'link',
-      },
-    ],
-  },
-  {
-    name: 'Coupons',
-    icon: <Tag />,
-    active: false,
-    children: [
-      {
-        name: 'Coupon List',
-        path: '/coupon_list',
-        type: 'link',
-      },
-      {
-        name: 'Create Coupon',
-        path: '/create_coupon',
-        type: 'link',
-      },
-    ],
-  },
-  {
-    icon: <Star />,
-    name: 'Product Review',
-    path: '/product_review',
-    type: 'link',
-  },
-  {
-    icon: <Archive />,
-    name: 'Invoice',
-    path: '/invoice',
-    type: 'link',
-  },
-  {
-    icon: <Phone />,
-    name: 'Support Ticket',
-    path: 'support_ticket',
-    type: 'hyperlink',
-  },
-  {
     name: 'Settings',
     icon: <Settings />,
     active: false,
@@ -182,35 +100,5 @@ export const AllMenus = [
         type: 'link',
       },
     ],
-  },
-  {
-    name: 'Reports',
-    icon: <FileText />,
-    path: '/reports',
-    type: 'link',
-  },
-  {
-    name: 'List Page',
-    icon: <List />,
-    path: '/list_page',
-    type: 'link',
-  },
-  {
-    name: 'Log In',
-    icon: <LogIn />,
-    path: '/auth/login',
-    type: 'link',
-  },
-  {
-    name: 'Forgot Password',
-    icon: <Key />,
-    path: '/auth/forgot_password',
-    type: 'link',
-  },
-  {
-    name: 'Register',
-    icon: <PlusCircle />,
-    path: '/register',
-    type: 'link',
   },
 ];

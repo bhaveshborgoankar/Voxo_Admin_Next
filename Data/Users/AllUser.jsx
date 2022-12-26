@@ -1,55 +1,47 @@
-import Link from 'next/link';
-import DeleteHandler from './DeleteHandler';
+import ActionButtons from './ActionButtons';
 
 export const AllUserColumn = [
   {
-    selector: (row) => row.user,
-    name: 'User',
+    selector: (row) => row.Sr_No,
+    name: 'Sr No',
+    sortable: true,
+    compact: true,
   },
   {
     selector: (row) => row.name,
     name: 'Name',
+    sortable: true,
+    compact: true,
   },
   {
     selector: (row) => row.phone,
     name: 'Phone',
+    sortable: true,
+    compact: true,
   },
   {
     selector: (row) => row.email,
     name: 'Email',
-  },
-  {
-    selector: (row) => row.country,
-    name: 'Country',
+    sortable: true,
+    compact: true,
   },
   {
     selector: (row) => row.created_at,
     name: 'Created On',
+    sortable: true,
+    compact: true,
   },
   {
     selector: (row) => row.activeStatus,
     name: 'Status',
+    sortable: true,
+    compact: true,
   },
   {
-    cell: (row) => (
-      <a href='#javascript'>
-        <span className='lnr lnr-eye'></span>
-      </a>
-    ),
-  },
-  {
-    name: 'Options',
-    cell: (row) => (
-      <Link href={`/user/edit/${row._id}`}>
-        <span className='lnr lnr-pencil'></span>
-      </Link>
-    ),
-  },
-  {
-    cell: (row) => <DeleteHandler row={row} />,
-    ignoreRowClick: true,
-    allowOverflow: true,
-    button: true,
+    name: 'Action',
+    cell: (row) => <ActionButtons row={row} />,
+    sortable: true,
+    compact: true,
   },
 ];
 export const AllUserData = [

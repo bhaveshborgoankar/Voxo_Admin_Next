@@ -1,4 +1,4 @@
-import Cookies from 'js-cookie';
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { Btn } from '../../AbstractElements';
@@ -6,7 +6,7 @@ import { Areyousure, ConfirmDelete, No, Yes } from '../../Constant';
 import { deleteUserAPI } from '../../Constant/APIRoutes';
 import request from '../../Utils/APIService';
 
-const DeleteHandler = ({ row }) => {
+const ActionButtons = ({ row }) => {
   const [isOpen, setIsOpen] = useState(false);
   const onUserDelete = async () => {
     const Res = await request({ url: `${deleteUserAPI}${row._id}`, method: 'DELETE' });
@@ -18,9 +18,16 @@ const DeleteHandler = ({ row }) => {
   };
   return (
     <>
-      <a href='#javascript' onClick={toggle}>
-        <span className='lnr lnr-trash'></span>
-      </a>
+      <div>
+        <Link href={`/user/edit/${row._id}`}>
+          <span className='lnr lnr-pencil'></span>
+        </Link>
+      </div>
+      <div className='ms-3'>
+        <a href='#javascript' onClick={toggle}>
+          <span className='lnr lnr-trash'></span>
+        </a>
+      </div>
       <Modal isOpen={isOpen} toggle={toggle}>
         <ModalHeader toggle={toggle}>{ConfirmDelete}</ModalHeader>
         <ModalBody>{Areyousure}</ModalBody>
@@ -32,5 +39,4 @@ const DeleteHandler = ({ row }) => {
     </>
   );
 };
-
-export default DeleteHandler;
+export default ActionButtons;

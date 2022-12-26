@@ -41,6 +41,14 @@ const AccountTabData = () => {
         </Row>
 
         <Row className='mb-4 align-items-center'>
+          <Label className='col-lg-2 col-md-3 col-form-label form-label-title'>{EmailAddress}*</Label>
+          <Col md='9' lg='10'>
+            <input className='form-control' type='email' name='email' {...register('email', { required: true })} />
+            <ErrorHandle errors={errors.email} message={'Email is required'} />
+          </Col>
+        </Row>
+
+        <Row className='mb-4 align-items-center'>
           <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Password}*</Label>
           <Col md='9' lg='10'>
             <input className='form-control' type='password' name='password' {...register('password', { minLength: 8 })} />
@@ -58,26 +66,10 @@ const AccountTabData = () => {
         </Row>
 
         <Row className='mb-4 align-items-center'>
-          <Label className='col-lg-2 col-md-3 col-form-label form-label-title'>{EmailAddress}*</Label>
-          <Col md='9' lg='10'>
-            <input className='form-control' type='email' name='email' {...register('email', { required: true })} />
-            <ErrorHandle errors={errors.email} message={'Email is required'} />
-          </Col>
-        </Row>
-
-        <Row className='mb-4 align-items-center'>
           <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Phone}*</Label>
           <Col md='9' lg='10'>
-            <input className='form-control' type='number' name='phone' {...register('phone', { required: true, min: 10 })} />
+            <input className='form-control' type='number' name='phone' {...register('phone', { minLength: 10 })} />
             <ErrorHandle errors={errors.phone} message={'Phone number must be contain minimun 10 digit.'} />
-          </Col>
-        </Row>
-
-        <Row className='mb-4 align-items-center'>
-          <Label className='col-lg-2 col-md-3 col-form-label form-label-title'>{Country}</Label>
-          <Col md='9' lg='10'>
-            <input className='form-control' type='text' name='country' {...register('country', { required: true })} />
-            <ErrorHandle errors={errors.country} message={'Country is required'} />
           </Col>
         </Row>
         <Btn attrBtn={{ className: 'btn-theme theme-bg-color mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>

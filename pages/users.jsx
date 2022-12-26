@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import request from '../Utils/APIService';
 import AllUsersContain from '../Components/Users/All Users';
 import { getUsersAPI } from '../Constant/APIRoutes';
-import UserContext from '../Helper/UserContext';
 
 const AllUsers = ({ data }) => {
   return <AllUsersContain data={data && data} />;
