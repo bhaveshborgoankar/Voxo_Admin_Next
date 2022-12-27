@@ -4,7 +4,6 @@ import AllUsersContain from '../Components/Users/All Users';
 import { getUsersAPI } from '../Constant/APIRoutes';
 
 const AllUsers = ({ data }) => {
-  console.log("comp data", data)
   if (!data) return null;
   return <AllUsersContain data={data && data} />;
 };

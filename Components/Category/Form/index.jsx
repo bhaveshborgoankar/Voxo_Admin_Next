@@ -1,21 +1,28 @@
 import React from 'react';
 import { Card, CardBody, Col, Container, Row } from 'reactstrap';
+import TitleHeading from '../../CommonComponents/TitleHeading';
+import FormCategory from './FormContain';
 
-const CategoryForm = () => {
+const CategoryForm = ({ headTitle, data }) => {
   return (
-    <Container fluid={true}>
-      <Row>
-        <Col xs='12'>
-          <Row>
-            <Col sm='12'>
-              <Card>
-                <CardBody>{/* <h1>kjfdhjkfdgjkhfd</h1> */}</CardBody>
-              </Card>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <TitleHeading title={headTitle} />
+      <Container fluid={true}>
+        <Row>
+          <Col xs='12'>
+            <Row>
+              <Col sm='12'>
+                <Card>
+                  <CardBody>
+                    <FormCategory data={data} />
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 

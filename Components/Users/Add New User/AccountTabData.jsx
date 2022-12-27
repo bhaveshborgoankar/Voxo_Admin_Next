@@ -52,7 +52,6 @@ const AccountTabData = () => {
           <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Password}*</Label>
           <Col md='9' lg='10'>
             <input className='form-control' type='password' name='password' {...register('password', { minLength: 8 })} />
-            {console.log('password', errors)}
             <ErrorHandle errors={errors.password} message={'Minimum length is 8'} />
           </Col>
         </Row>

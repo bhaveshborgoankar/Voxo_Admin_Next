@@ -12,7 +12,6 @@ const ActionButtons = ({ row, editRedirectLink, deleteAPILink, toReRender }) => 
 
   const onUserDelete = async () => {
     const Res = await request({ url: `${deleteAPILink}${row._id}`, method: 'DELETE' });
-    console.log('Res', Res);
     if (Res.status === 200) {
       setIsOpen(!isOpen);
       return router.push(toReRender, '', { scroll: false });

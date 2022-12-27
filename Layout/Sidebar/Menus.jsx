@@ -27,7 +27,7 @@ export const AllMenus = [
         type: 'link',
       },
       {
-        name: 'Add new user',
+        name: 'Add User',
         path: '/user/add',
         type: 'link',
       },
@@ -66,7 +66,7 @@ export const AllMenus = [
         type: 'link',
       },
       {
-        name: 'Add new category',
+        name: 'Add Category',
         path: '/category/add',
         type: 'link',
       },

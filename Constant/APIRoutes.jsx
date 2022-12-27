@@ -13,4 +13,7 @@ export const deleteUserAPI = '/api/user/delete/';
 
 // Category APIs
 export const getCategoryAPI = '/api/category/categories';
+export const getSingleCategory = '/api/category/'
+export const createCategoryAPI = '/api/category/create';
+export const updateCategoryAPI = '/api/category/edit/';
 export const deleteCategoryAPI = '/api/category/delete/';
