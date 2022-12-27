@@ -1,17 +1,22 @@
-import Link from 'next/link';
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { Btn } from '../../AbstractElements';
 import { Areyousure, ConfirmDelete, No, Yes } from '../../Constant';
-import { deleteUserAPI } from '../../Constant/APIRoutes';
 import request from '../../Utils/APIService';
 
-const ActionButtons = ({ row }) => {
+const ActionButtons = ({ row, editRedirectLink, deleteAPILink, toReRender }) => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+
   const onUserDelete = async () => {
-    const Res = await request({ url: `${deleteUserAPI}${row._id}`, method: 'DELETE' });
+    const Res = await request({ url: `${deleteAPILink}${row._id}`, method: 'DELETE' });
     console.log('Res', Res);
-    setIsOpen(!isOpen);
+    if (Res.status === 200) {
+      setIsOpen(!isOpen);
+      return router.push(toReRender, '', { scroll: false });
+    }
   };
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -19,7 +24,7 @@ const ActionButtons = ({ row }) => {
   return (
     <>
       <div>
-        <Link href={`/user/edit/${row._id}`}>
+        <Link href={`${editRedirectLink}${row._id}`}>
           <span className='lnr lnr-pencil'></span>
         </Link>
       </div>

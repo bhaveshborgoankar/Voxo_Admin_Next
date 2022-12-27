@@ -33,28 +33,28 @@ export const AllMenus = [
       },
     ],
   },
-  {
-    name: 'Orders',
-    icon: <Archive />,
-    active: false,
-    children: [
-      {
-        name: 'Order List',
-        path: '/order_list',
-        type: 'link',
-      },
-      {
-        name: 'Order Detail',
-        path: '/order_detail',
-        type: 'link',
-      },
-      {
-        name: 'Order Tracking',
-        path: '/order_tracking',
-        type: 'link',
-      },
-    ],
-  },
+  // {
+  //   name: 'Orders',
+  //   icon: <Archive />,
+  //   active: false,
+  //   children: [
+  //     {
+  //       name: 'Order List',
+  //       path: '/order_list',
+  //       type: 'link',
+  //     },
+  //     {
+  //       name: 'Order Detail',
+  //       path: '/order_detail',
+  //       type: 'link',
+  //     },
+  //     {
+  //       name: 'Order Tracking',
+  //       path: '/order_tracking',
+  //       type: 'link',
+  //     },
+  //   ],
+  // },
   {
     name: 'Categories',
     icon: <Clipboard />,
@@ -62,33 +62,33 @@ export const AllMenus = [
     children: [
       {
         name: 'All Categories',
-        path: '/users',
+        path: '/category',
         type: 'link',
       },
       {
         name: 'Add new category',
-        path: '/user/add',
+        path: '/category/add',
         type: 'link',
       },
     ],
   },
-  {
-    name: 'Product',
-    icon: <Box />,
-    active: false,
-    children: [
-      {
-        name: 'Products',
-        path: '/products',
-        type: 'link',
-      },
-      {
-        name: 'Add New Products',
-        path: '/add_product',
-        type: 'link',
-      },
-    ],
-  },
+  // {
+  //   name: 'Product',
+  //   icon: <Box />,
+  //   active: false,
+  //   children: [
+  //     {
+  //       name: 'Products',
+  //       path: '/products',
+  //       type: 'link',
+  //     },
+  //     {
+  //       name: 'Add New Products',
+  //       path: '/add_product',
+  //       type: 'link',
+  //     },
+  //   ],
+  // },
   {
     name: 'Settings',
     icon: <Settings />,

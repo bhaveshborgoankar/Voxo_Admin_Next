@@ -3,14 +3,14 @@ import React from 'react';
 import { PlusSquare } from 'react-feather';
 import { AddNew } from '../../Constant';
 
-const TitleHeading = ({ btn, title }) => {
+const TitleHeading = ({ btn, title, redirectUrl }) => {
   return (
     <>
       {btn ? (
         <div className='title-header title-header-1'>
           <h5>{title}</h5>
           <form className='d-inline-flex'>
-            <Link href='/user/add/' className='align-items-center btn btn-theme'>
+            <Link href={redirectUrl} className='align-items-center btn btn-theme'>
               <PlusSquare />
               {AddNew}
             </Link>

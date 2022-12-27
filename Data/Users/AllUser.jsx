@@ -1,3 +1,4 @@
+import { deleteUserAPI } from '../../Constant/APIRoutes';
 import ActionButtons from './ActionButtons';
 
 export const AllUserColumn = [
@@ -39,7 +40,7 @@ export const AllUserColumn = [
   },
   {
     name: 'Action',
-    cell: (row) => <ActionButtons row={row} />,
+    cell: (row) => <ActionButtons row={row} editRedirectLink={'/user/edit/'} deleteAPILink={deleteUserAPI} toReRender={'/users'} />,
     sortable: true,
     compact: true,
   },
