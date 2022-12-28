@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { Form, FormGroup, Label } from 'reactstrap';
-import { Btn } from '../../AbstractElements';
 import ErrorBox from '../../Components/CommonComponents/ErrorBox';
 import { Confirm, ConfirmPasswords, Password, UpdatePasswords } from '../../Constant';
 import { UpdatePasswordAPI } from '../../Constant/APIRoutes';
@@ -36,7 +35,10 @@ const UpdatePassword = () => {
         setIsLoader(false);
         Cookies.remove('fpemail'), Cookies.remove('vo'), setActive({ status: false });
         router.push('/auth/login');
-      } else setActive({ status: true, title: Res?.data?.msg });
+      } else {
+        setIsLoader(false);
+        setActive({ status: true, title: Res?.data?.msg });
+      }
     } else {
       setIsLoader(false);
       setActive({ status: true, title: 'Password not match!' });
@@ -54,12 +56,12 @@ const UpdatePassword = () => {
             <FormGroup floating>
               <input className='form-control' type='password' name='password' {...register('password', { required: true, minLength: 8 })} placeholder='Enter password' />
               <Label for='exampleEmail'>{Password}</Label>
-              <ErrorHandle errors={errors.password} message={'Password is mandatory'} />
+              <ErrorHandle errors={errors.password} message={'Password is required'} minNumber={8} />
             </FormGroup>
             <FormGroup floating>
               <input className='form-control' type='password' name='confirm_password' {...register('confirm_password', { required: true, minLength: 8 })} placeholder='Enter Confirm Password' />
               <Label for='exampleEmail'>{ConfirmPasswords}</Label>
-              <ErrorHandle errors={errors.password} message={'Confirm Password is mandatory'} />
+              <ErrorHandle errors={errors.password} message={'Confirm Password is required'} minNumber={8} />
             </FormGroup>
             <SubmitButton title={Confirm} isLoader={isLoader} />
           </Form>

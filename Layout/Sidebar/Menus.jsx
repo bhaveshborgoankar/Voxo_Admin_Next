@@ -1,4 +1,4 @@
-import { Home, Users, Archive, Box, Settings, Clipboard } from 'react-feather';
+import { Home, Users, Archive, Box, Settings, Clipboard, Tag } from 'react-feather';
 
 export const AllMenus = [
   {
@@ -33,6 +33,40 @@ export const AllMenus = [
       },
     ],
   },
+  {
+    name: 'Categories',
+    icon: <Clipboard />,
+    active: false,
+    children: [
+      {
+        name: 'All Categories',
+        path: '/category',
+        type: 'link',
+      },
+      {
+        name: 'Add Category',
+        path: '/category/add',
+        type: 'link',
+      },
+    ],
+  },
+  {
+    name: 'Tags',
+    icon: <Tag />,
+    active: false,
+    children: [
+      {
+        name: 'All Tags',
+        path: '/tag',
+        type: 'link',
+      },
+      {
+        name: 'Add Tag',
+        path: '/tag/add',
+        type: 'link',
+      },
+    ],
+  },
   // {
   //   name: 'Orders',
   //   icon: <Archive />,
@@ -55,23 +89,6 @@ export const AllMenus = [
   //     },
   //   ],
   // },
-  {
-    name: 'Categories',
-    icon: <Clipboard />,
-    active: false,
-    children: [
-      {
-        name: 'All Categories',
-        path: '/category',
-        type: 'link',
-      },
-      {
-        name: 'Add Category',
-        path: '/category/add',
-        type: 'link',
-      },
-    ],
-  },
   // {
   //   name: 'Product',
   //   icon: <Box />,

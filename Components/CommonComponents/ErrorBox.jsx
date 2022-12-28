@@ -5,13 +5,13 @@ import UserContext from '../../Helper/UserContext';
 const ErrorBox = ({ active }) => {
   const { setActive } = useContext(UserContext);
   useEffect(() => {
-    setActive({ status: false })
-  }, [])
+    setActive({ status: false });
+  }, []);
   return (
-    <div className={`error-box ${active.status ? 'active' : ''}`}>
+    <div className={`error-box ${active?.status ? 'active' : ''}`}>
       <AlertCircle />
       <div>
-        <h4>{active.title}</h4>
+        <h4>{active?.title}</h4>
       </div>
     </div>
   );

@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { Card, CardBody, Col, Container, Row } from 'reactstrap';
-import { AllCategories } from '../../Constant';
-import { categoryStatusAPI } from '../../Constant/APIRoutes';
-import { CategoryColumn } from '../../Data/CategoryData';
+import { AllTags } from '../../Constant';
+import { tagStatusAPI } from '../../Constant/APIRoutes';
+import { TagData } from '../../Data/TagData';
 import StatusCheckBox from '../CommonComponents/StatusCheckBox';
 import TitleHeading from '../CommonComponents/TitleHeading';
 
-const CategoryContain = ({ data }) => {
-  const [categoryData, setCategoryData] = useState([]);
+const TagContain = ({ data }) => {
+  const [tagData, setTagData] = useState([]);
+
   useEffect(() => {
-    let timer = setTimeout(() => {
-      setCategoryData(data);
+    const timer = setTimeout(() => {
+      setTagData(data);
     }, 100);
     return () => clearTimeout(timer);
-  }, [data]);
+  }, []);
+  // console.log('data', data);
   return (
     <>
-      <TitleHeading btn={true} title={AllCategories} redirectUrl={'/category/add'} />
+      <TitleHeading btn={true} title={AllTags} redirectUrl={'/tag/add'} />
       <Container fluid={true}>
         <Row>
           <Col sm='12'>
@@ -25,15 +27,14 @@ const CategoryContain = ({ data }) => {
               <CardBody>
                 <div>
                   <div className='table-responsive table-desi'>
-                    {categoryData.length > 0 && (
+                    {tagData.length > 0 && (
                       <DataTable
-                        data={categoryData.map((item, i) => ({
+                        data={tagData.map((item, i) => ({
                           ...item,
                           Sr_No: i + 1,
-                          image: <img src={item.image} alt='Image' />,
-                          activeStatus: <StatusCheckBox item={item} urlStatus={categoryStatusAPI} />,
+                          activeStatus: <StatusCheckBox item={item} urlStatus={tagStatusAPI} />,
                         }))}
-                        columns={CategoryColumn}
+                        columns={TagData}
                         pagination
                       />
                     )}
@@ -48,4 +49,4 @@ const CategoryContain = ({ data }) => {
   );
 };
 
-export default CategoryContain;
+export default TagContain;

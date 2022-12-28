@@ -5,12 +5,11 @@ import LoginForm from './LoginForm';
 
 const LoginContain = () => {
   const { active } = useContext(UserContext);
-
   return (
     <div className='box-wrapper'>
       <div className='login-section'>
         <div className='materialContainer'>
-          <ErrorBox active={active} />
+          <ErrorBox active={active ?? active} />
           <div className='box'>
             <LoginForm />
           </div>

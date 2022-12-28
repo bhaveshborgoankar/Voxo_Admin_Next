@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { Card, CardBody, Col, Container, Input, Row } from 'reactstrap';
 import { AllUserss } from '../../../Constant';
+import { userStatusAPI } from '../../../Constant/APIRoutes';
 import { AllUserColumn } from '../../../Data/Users/AllUser';
 import Pagination from '../../CommonComponents/Pagination';
+import StatusCheckBox from '../../CommonComponents/StatusCheckBox';
 import TitleHeading from '../../CommonComponents/TitleHeading';
 const AllUsers = ({ data }) => {
   const [userData, setUserdata] = useState('');
@@ -29,11 +31,7 @@ const AllUsers = ({ data }) => {
                           ...item,
                           Sr_No: i + 1,
                           created_at: item.created_at.split('T')[0],
-                          activeStatus: (
-                            <div className='form-check form-switch'>
-                              <Input className='form-check-input' type='checkbox' />
-                            </div>
-                          ),
+                          activeStatus: <StatusCheckBox item={item} urlStatus={userStatusAPI} />,
                         }))}
                         columns={AllUserColumn}
                         pagination
