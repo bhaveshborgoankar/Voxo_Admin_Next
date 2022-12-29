@@ -3,13 +3,14 @@ import { useRouter } from 'next/router';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form } from 'reactstrap';
-import { Email, ForgotPasswords, Send } from '../../Constant';
-import { ForgotPasswordAPI } from '../../Constant/APIRoutes';
-import UserContext from '../../Helper/UserContext';
-import request from '../../Utils/APIService';
-import FloatingInput from '../CommonComponents/FloatingInput';
-import FormInput from '../CommonComponents/FormInput';
-import SubmitButton from '../CommonComponents/SubmitButton';
+import { Email, ForgotPasswords, Send } from '../../../Constant';
+import { ForgotPasswordAPI } from '../../../Constant/APIRoutes';
+import UserContext from '../../../Helper/UserContext';
+import request from '../../../Utils/APIService';
+import DivideInput from '../../CommonComponents/DivideInput';
+import FloatingInput from '../../CommonComponents/FloatingInput';
+import FormInput from '../../CommonComponents/FormInput';
+import SubmitButton from '../../CommonComponents/SubmitButton';
 
 const ForgotPasswordContain = () => {
   const router = useRouter();
@@ -44,7 +45,7 @@ const ForgotPasswordContain = () => {
       </div>
       <Form onSubmit={handleSubmit(onForgotPassword)}>
         <FloatingInput title={Email}>
-          <FormInput className='form-control' name='Email' placeholder='Email' type='email' errors={errors.Email} register={{ ...register('Email', { required: true }) }} />
+          <DivideInput inputtype='input' className='form-control' name='Email' placeholder='Email' type='email' errors={errors.Email} register={{ ...register('Email', { required: true }) }} />
         </FloatingInput>
         <SubmitButton title={Send} isLoader={isLoader} />
       </Form>

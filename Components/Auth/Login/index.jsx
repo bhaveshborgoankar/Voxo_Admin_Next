@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import UserContext from '../../Helper/UserContext';
-import ErrorBox from '../CommonComponents/ErrorBox';
+import UserContext from '../../../Helper/UserContext';
+import ErrorBox from '../../CommonComponents/ErrorBox';
 import LoginForm from './LoginForm';
 
 const LoginContain = () => {

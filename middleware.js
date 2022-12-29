@@ -39,6 +39,6 @@ export function middleware(request) {
 }
 // See "Matching Paths" below to learn more
 export const config = {
-    matcher: ["/users/:path*", "/category/:path*", "/"],
+    matcher: ["/users/:path*", "/category/:path*", "/user/:path*", "/"],
     // matcher: ["/auth/:path*"],
 };

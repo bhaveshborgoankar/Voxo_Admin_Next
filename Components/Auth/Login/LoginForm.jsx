@@ -4,13 +4,13 @@ import { useRouter } from 'next/router';
 import { Form } from 'reactstrap';
 import { useForm } from 'react-hook-form';
 import Cookies from 'js-cookie';
-import { Email, Forgotyourpassword, LogIn, Logins, Password, Pleasefillthename } from '../../Constant';
-import { LoginAPI } from '../../Constant/APIRoutes';
-import UserContext from '../../Helper/UserContext';
-import request from '../../Utils/APIService';
-import FloatingInput from '../CommonComponents/FloatingInput';
-import FormInput from '../CommonComponents/FormInput';
-import SubmitButton from '../CommonComponents/SubmitButton';
+import { Email, Forgotyourpassword, LogIn, Logins, Password, Pleasefillthename } from '../../../Constant';
+import { LoginAPI } from '../../../Constant/APIRoutes';
+import UserContext from '../../../Helper/UserContext';
+import request from '../../../Utils/APIService';
+import FloatingInput from '../../CommonComponents/FloatingInput';
+import SubmitButton from '../../CommonComponents/SubmitButton';
+import DivideInput from '../../CommonComponents/DivideInput';
 const LoginForm = () => {
   const [isLoader, setIsLoader] = useState(false);
   const router = useRouter();
@@ -43,11 +43,11 @@ const LoginForm = () => {
         <h2>{Logins}</h2>
       </div>
       <FloatingInput title={Email}>
-        <FormInput className='form-control' name='Email' placeholder='Email' type='email' register={{ ...register('Email', { required: true }) }} errors={errors.Email} />
+        <DivideInput inputtype='input' className='form-control' name='Email' placeholder='Email' type='email' register={{ ...register('Email', { required: true }) }} errors={errors.Email} />
       </FloatingInput>
       <div className='valid-feedback'>{Pleasefillthename}</div>
       <FloatingInput title={Password}>
-        <FormInput className='form-control' name='Password' placeholder='Password' type='select' register={{ ...register('Password', { required: true }) }} errors={errors.Password} />
+        <DivideInput inputtype='input' className='form-control' name='Password' placeholder='Password' type='password' register={{ ...register('Password', { required: true, minLength: 8 }) }} errors={errors.Password} minnumber={8} />
       </FloatingInput>
       <Link href={`/auth/forgot_password`} className='pass-forgot'>
         {Forgotyourpassword}

@@ -35,7 +35,7 @@ const AccountTabData = () => {
         <Row className='mb-4 align-items-center'>
           <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{FirstName}*</Label>
           <Col md='9' lg='10'>
-            <input className='form-control' type='text' name='name' {...register('name', { required: 'This field is required' })} />
+            <input className='form-control' type='text' name='name' {...register('name', { required: true })} />
             <ErrorHandle errors={errors.name} message={'Name is required'} />
           </Col>
         </Row>
@@ -52,7 +52,7 @@ const AccountTabData = () => {
           <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Password}*</Label>
           <Col md='9' lg='10'>
             <input className='form-control' type='password' name='password' {...register('password', { required: true, minLength: 8 })} />
-            <ErrorHandle errors={errors.password} message={'Password is required'} minNumber={8} />
+            <ErrorHandle errors={errors.password} message={'Password is required'} minnumber={8} />
           </Col>
         </Row>
 
@@ -60,7 +60,7 @@ const AccountTabData = () => {
           <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{ConfirmPassword}*</Label>
           <Col md='9' lg='10'>
             <input className='form-control' type='password' name='confirm_password' {...register('confirm_password', { required: true, minLength: 8 })} />
-            <ErrorHandle errors={errors.confirm_password} message={'Confirm Password is required'} minNumber={8} />
+            <ErrorHandle errors={errors.confirm_password} message={'Confirm Password is required'} minnumber={8} />
           </Col>
         </Row>
 
@@ -68,7 +68,7 @@ const AccountTabData = () => {
           <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Phone}*</Label>
           <Col md='9' lg='10'>
             <input className='form-control' type='number' name='phone' {...register('phone', { required: true, minLength: 10 })} />
-            <ErrorHandle errors={errors.phone} message={'phone is required'} minNumber={10} />
+            <ErrorHandle errors={errors.phone} message={'phone is required'} minnumber={10} />
           </Col>
         </Row>
         <Btn attrBtn={{ className: 'btn-theme theme-bg-color mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>

@@ -30,7 +30,7 @@ const CategoryContain = ({ data }) => {
                         data={categoryData.map((item, i) => ({
                           ...item,
                           Sr_No: i + 1,
-                          image: <img src={item.image} alt='Image' />,
+                          image: <img className='mt-2 mb-2' src={`${process.env.API_URL}/${item.image}`} alt='Image' height={50} width={50} />,
                           activeStatus: <StatusCheckBox item={item} urlStatus={categoryStatusAPI} />,
                         }))}
                         columns={CategoryColumn}
