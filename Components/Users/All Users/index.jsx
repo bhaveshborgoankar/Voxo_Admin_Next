@@ -4,6 +4,7 @@ import { Card, CardBody, Col, Container, Input, Row } from 'reactstrap';
 import { AllUserss } from '../../../Constant';
 import { userStatusAPI } from '../../../Constant/APIRoutes';
 import { AllUserColumn } from '../../../Data/Users/AllUser';
+import { ModifyDate } from '../../../Utils/ModifyDate';
 import Pagination from '../../CommonComponents/Pagination';
 import StatusCheckBox from '../../CommonComponents/StatusCheckBox';
 import TitleHeading from '../../CommonComponents/TitleHeading';
@@ -30,7 +31,7 @@ const AllUsers = ({ data }) => {
                         data={userData.map((item, i) => ({
                           ...item,
                           Sr_No: i + 1,
-                          created_at: item.created_at.split('T')[0],
+                          created_at: ModifyDate(item.created_at),
                           activeStatus: <StatusCheckBox item={item} urlStatus={userStatusAPI} />,
                         }))}
                         columns={AllUserColumn}

@@ -1,7 +1,9 @@
 import React from 'react';
+import TagForm from '../../../Components/Tags/Form';
+import { AddTagss } from '../../../Constant';
 
 const AddTag = () => {
-  return <div>Add Tags</div>;
+  return <TagForm headTitle={AddTagss} />;
 };
 
 export default AddTag;

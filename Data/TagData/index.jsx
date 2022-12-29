@@ -15,8 +15,14 @@ export const TagData = [
     compact: true,
   },
   {
+    selector: (row) => row.created_at,
+    name: 'Created At',
+    sortable: true,
+    compact: true,
+  },
+  {
     selector: (row) => row.activeStatus,
-    name: 'Sr No',
+    name: 'Status',
     sortable: true,
     compact: true,
   },

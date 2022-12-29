@@ -1,6 +1,9 @@
 import React from 'react';
 import { Card, CardBody, Col, Container, Row } from 'reactstrap';
-const TagForm = () => {
+import TitleHeading from '../../CommonComponents/TitleHeading';
+import FormTag from './FormTag';
+const TagForm = (props) => {
+  const { data, headTitle } = props;
   return (
     <>
       <TitleHeading title={headTitle} />
@@ -11,7 +14,7 @@ const TagForm = () => {
               <Col sm='12'>
                 <Card>
                   <CardBody>
-                    <FormCategory data={data} />
+                    <FormTag data={data} />
                   </CardBody>
                 </Card>
               </Col>

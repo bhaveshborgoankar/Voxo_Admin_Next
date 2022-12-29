@@ -4,8 +4,6 @@ import { FormGroup, Input } from 'reactstrap';
 import request from '../../Utils/APIService';
 
 const StatusCheckBox = (props) => {
-  console.log('🚀 ~ file: StatusCheckBox.jsx:7 ~ StatusCheckBox ~ props', props.item);
-
   const { urlStatus, item } = props;
   const [isActive, setIsAvtive] = useState(item.is_active);
 

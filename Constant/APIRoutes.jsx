@@ -22,8 +22,8 @@ export const categoryStatusAPI = '/api/category/';
 
 // Tags APIs
 export const getTagAPI = '/api/tag/tags';
-// export const getSingleCategory = '/api/category/';
-// export const createCategoryAPI = '/api/category/create';
-// export const updateCategoryAPI = '/api/category/edit/';
+export const getSingleTagAPI = '/api/tag/';
+export const createTagAPI = '/api/tag/create';
+export const updateTagAPI = '/api/tag/edit/';
 export const deleteTagAPI = '/api/tag/delete/';
 export const tagStatusAPI = '/api/tag/';

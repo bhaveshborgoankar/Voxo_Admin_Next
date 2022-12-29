@@ -4,6 +4,7 @@ import { Card, CardBody, Col, Container, Row } from 'reactstrap';
 import { AllTags } from '../../Constant';
 import { tagStatusAPI } from '../../Constant/APIRoutes';
 import { TagData } from '../../Data/TagData';
+import { ModifyDate } from '../../Utils/ModifyDate';
 import StatusCheckBox from '../CommonComponents/StatusCheckBox';
 import TitleHeading from '../CommonComponents/TitleHeading';
 
@@ -15,8 +16,7 @@ const TagContain = ({ data }) => {
       setTagData(data);
     }, 100);
     return () => clearTimeout(timer);
-  }, []);
-  // console.log('data', data);
+  }, [data]);
   return (
     <>
       <TitleHeading btn={true} title={AllTags} redirectUrl={'/tag/add'} />
@@ -32,6 +32,7 @@ const TagContain = ({ data }) => {
                         data={tagData.map((item, i) => ({
                           ...item,
                           Sr_No: i + 1,
+                          created_at: ModifyDate(item.created_at),
                           activeStatus: <StatusCheckBox item={item} urlStatus={tagStatusAPI} />,
                         }))}
                         columns={TagData}
