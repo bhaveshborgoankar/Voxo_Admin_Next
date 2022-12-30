@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import ErrorBox from '../../Components/CommonComponents/ErrorBox';
 import UserContext from '../../Helper/UserContext';
-import ForgotPasswordContain from '../../Components/ForgotPassword';
+import ForgotPasswordContain from '../../Components/Auth/ForgotPassword';
 
 const ForgotPassword = () => {
   const { active } = useContext(UserContext);
