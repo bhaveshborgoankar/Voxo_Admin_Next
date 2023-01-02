@@ -1,7 +1,8 @@
 import React from 'react';
-import AddNewUsersContains from '../../../Components/Users/Add New User';
+import AddNewUsersContains from '../../../Components/Users/Form';
+import { AddNewUserTitle } from '../../../Constant';
 
 const AddNewUser = () => {
-  return <AddNewUsersContains />;
+  return <AddNewUsersContains headTitle={AddNewUserTitle} />;
 };
 export default AddNewUser;

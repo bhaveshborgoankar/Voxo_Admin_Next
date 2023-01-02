@@ -1,15 +1,6 @@
-import { Home, Users, Archive, Box, Settings, Clipboard, Tag } from 'react-feather';
+import { Home, Users, Settings, Clipboard, Tag } from 'react-feather';
 
 export const AllMenus = [
-  {
-    name: 'General',
-    subHeading: 'Dashboard & Users',
-    type: 'title',
-    title: true,
-    application: true,
-    mainClasses: 'sidebar-main-title sidebar-main-title-3',
-    class: 'sidebar-link sidebar-title link-nav',
-  },
   {
     name: 'Dashboard',
     path: '/',
@@ -23,7 +14,7 @@ export const AllMenus = [
     children: [
       {
         name: 'All users',
-        path: '/users',
+        path: '/user',
         type: 'link',
       },
       {

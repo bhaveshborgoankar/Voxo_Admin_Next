@@ -33,12 +33,12 @@ export function middleware(request) {
     if (path == "/auth/verify_otp" && !request.cookies.has("fpemail")) {
         return NextResponse.redirect(new URL("/auth/login", request.url));
     }
+
     if (path == "/auth/update_password" && (!request.cookies.has("vo") || !request.cookies.has("fpemail"))) {
         return NextResponse.redirect(new URL("/auth/login", request.url));
     }
 }
 // See "Matching Paths" below to learn more
 export const config = {
-    matcher: ["/users/:path*", "/category/:path*", "/user/:path*", "/"],
-    // matcher: ["/auth/:path*"],
+    matcher: ["/", "/users/:path*", "/category/:path*", "/user/:path*", "/auth/verify_otp", "/auth/update_password"],
 };

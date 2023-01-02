@@ -9,7 +9,7 @@ const LoginContain = () => {
     <div className='box-wrapper'>
       <div className='login-section'>
         <div className='materialContainer'>
-          <ErrorBox active={active ?? active} />
+          <ErrorBox active={active} />
           <div className='box'>
             <LoginForm />
           </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { Archive, LogOut, Phone, Settings, Users } from 'react-feather';
+import DarkMode from './DarkMode';
+import FullWidth from './FullWidth';
 
 const HeaderNav = () => {
   const router = useRouter();
@@ -54,11 +56,7 @@ const HeaderNav = () => {
         </ul>
       </li>
 
-      <li>
-        <div className='mode'>
-          <span className='lnr lnr-moon'></span>
-        </div>
-      </li>
+      <DarkMode />
 
       <li className='onhover-dropdown'>
         <span className='lnr lnr-bubble'></span>
@@ -107,12 +105,7 @@ const HeaderNav = () => {
           </li>
         </ul>
       </li>
-
-      <li className='maximize'>
-        <a className='text-dark' href='#javascript'>
-          <span className='lnr lnr-frame-expand'></span>
-        </a>
-      </li>
+      <FullWidth />
       <li className='profile-nav onhover-dropdown pe-0 me-0'>
         <div className='media profile-media'>
           <img className='user-profile rounded-circle' src={'/assets/images/users/4.jpg'} alt='' />

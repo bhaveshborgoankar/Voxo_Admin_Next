@@ -1,13 +1,12 @@
 import React from 'react';
 import { Card, CardBody, Col, Container, Row } from 'reactstrap';
-import { EditNewUser } from '../../../Constant';
 import TitleHeading from '../../CommonComponents/TitleHeading';
-import EditForm from './EditForm';
-
-const EditUser = ({ data }) => {
+import AccountTabData from './AccountTabData';
+const AddNewUsersContains = (props) => {
+  const { headTitle, data } = props;
   return (
     <>
-      <TitleHeading title={EditNewUser} />
+      <TitleHeading title={headTitle} />
       <Container fluid={true}>
         <Row>
           <Col xs='12'>
@@ -15,7 +14,7 @@ const EditUser = ({ data }) => {
               <Col sm='12'>
                 <Card>
                   <CardBody>
-                    <EditForm data={data} />
+                    <AccountTabData data={data} />
                   </CardBody>
                 </Card>
               </Col>
@@ -26,4 +25,4 @@ const EditUser = ({ data }) => {
     </>
   );
 };
-export default EditUser;
+export default AddNewUsersContains;

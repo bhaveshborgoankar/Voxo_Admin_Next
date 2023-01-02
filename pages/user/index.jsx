@@ -1,11 +1,11 @@
 import React from 'react';
-import request from '../Utils/APIService';
-import AllUsersContain from '../Components/Users/All Users';
-import { getUsersAPI } from '../Constant/APIRoutes';
+import request from '../../Utils/APIService';
+import { getUsersAPI } from '../../Constant/APIRoutes';
+import UsersContain from '../../Components/Users/UsersContain';
 
 const AllUsers = ({ data }) => {
   if (!data) return null;
-  return <AllUsersContain data={data && data} />;
+  return <UsersContain data={data && data} />;
 };
 
 export async function getServerSideProps(context) {

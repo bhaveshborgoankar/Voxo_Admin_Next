@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
-import { Card, CardBody, Col, Container, Input, Row } from 'reactstrap';
-import { AllUserss } from '../../../Constant';
-import { userStatusAPI } from '../../../Constant/APIRoutes';
-import { AllUserColumn } from '../../../Data/Users/AllUser';
-import { ModifyDate } from '../../../Utils/ModifyDate';
-import Pagination from '../../CommonComponents/Pagination';
-import StatusCheckBox from '../../CommonComponents/StatusCheckBox';
-import TitleHeading from '../../CommonComponents/TitleHeading';
-const AllUsers = ({ data }) => {
+import { Card, CardBody, Col, Container, Row } from 'reactstrap';
+import { AllUserss } from '../../Constant';
+import { userStatusAPI } from '../../Constant/APIRoutes';
+import { AllUserColumn } from '../../Data/Users/AllUser';
+import { ModifyDate } from '../../Utils/ModifyDate';
+import Pagination from '../CommonComponents/Pagination';
+import StatusCheckBox from '../CommonComponents/StatusCheckBox';
+import TitleHeading from '../CommonComponents/TitleHeading';
+
+const UsersContain = ({ data }) => {
   const [userData, setUserdata] = useState('');
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -49,4 +50,5 @@ const AllUsers = ({ data }) => {
     </>
   );
 };
-export default AllUsers;
+
+export default UsersContain;

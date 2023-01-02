@@ -3,7 +3,7 @@ import { X } from 'react-feather';
 import { Form } from 'reactstrap';
 const SearchBar = () => {
   return (
-    <Form className='form-inline search-full col' action='#javascript' method='get'>
+    <Form className='form-inline search-full col'>
       <div className='form-group w-100'>
         <div className='Typeahead Typeahead--twitterUsers'>
           <div className='u-posRelative'>

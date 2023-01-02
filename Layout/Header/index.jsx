@@ -4,6 +4,8 @@ import { Row } from 'reactstrap';
 import HeaderNav from './HeaderNav';
 import SearchBar from './SearchBar';
 import CreateContextToggle from '../../Helper/ToggleContext';
+import { CommonPath } from '../../Constant';
+
 const Header = () => {
   const { sidebarToggle } = useContext(CreateContextToggle);
   return (
@@ -12,8 +14,8 @@ const Header = () => {
         <div className='header-logo-wrapper col-auto p-0'>
           <div className='logo-wrapper'>
             <a href='#javascript'>
-              <img className='img-fluid main-logo' src={'/assets/images/logo/logo.png'} alt='logo' />
-              <img className='img-fluid white-logo' src={'/assets/images/logo/logo-white.png'} alt='logo' />
+              <img className='img-fluid main-logo' src={`${CommonPath}logo/logo.png`} alt='logo' />
+              <img className='img-fluid white-logo' src={`${CommonPath}logo/logo-white.png`} alt='logo' />
             </a>
           </div>
           <div className='toggle-sidebar'>

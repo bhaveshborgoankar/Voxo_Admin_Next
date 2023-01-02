@@ -1,10 +1,13 @@
 import React from 'react';
-import EditUser from '../../../Components/Users/Edit';
 import request from '../../../Utils/APIService';
 import { getSingleUserAPI } from '../../../Constant/APIRoutes';
+import AddNewUsersContains from '../../../Components/Users/Form';
+import { EditNewUser } from '../../../Constant';
 
 const UserEdit = ({ data }) => {
-  return <EditUser data={data} />;
+  if (!data) return null;
+  return <AddNewUsersContains headTitle={EditNewUser} data={data} />;
+  // return <EditUser data={data} />;
 };
 
 export async function getServerSideProps(context) {

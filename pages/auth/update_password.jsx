@@ -1,15 +1,7 @@
-import React, { useContext, useState } from 'react';
-import { useRouter } from 'next/router';
-import Cookies from 'js-cookie';
-import { Form, FormGroup, Label } from 'reactstrap';
+import React, { useContext } from 'react';
 import ErrorBox from '../../Components/CommonComponents/ErrorBox';
-import { Confirm, ConfirmPasswords, Password, UpdatePasswords } from '../../Constant';
-import { UpdatePasswordAPI } from '../../Constant/APIRoutes';
+import { UpdatePasswords } from '../../Constant';
 import UserContext from '../../Helper/UserContext';
-import request from '../../Utils/APIService';
-import { useForm } from 'react-hook-form';
-import ErrorHandle from '../../Components/CommonComponents/ErrorHandle';
-import SubmitButton from '../../Components/CommonComponents/SubmitButton';
 import UpdatePasswordContain from '../../Components/Auth/UpdatePassword';
 
 const UpdatePassword = () => {
