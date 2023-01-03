@@ -1,4 +1,4 @@
-import { Home, Users, Settings, Clipboard, Tag } from 'react-feather';
+import { Home, Users, Settings, Clipboard, Tag, Box } from 'react-feather';
 
 export const AllMenus = [
   {
@@ -54,6 +54,23 @@ export const AllMenus = [
       {
         name: 'Add Tag',
         path: '/tag/add',
+        type: 'link',
+      },
+    ],
+  },
+  {
+    name: 'Product',
+    icon: <Box />,
+    active: false,
+    children: [
+      {
+        name: 'Products',
+        path: '/product',
+        type: 'link',
+      },
+      {
+        name: 'Add New Products',
+        path: '/product/add',
         type: 'link',
       },
     ],
