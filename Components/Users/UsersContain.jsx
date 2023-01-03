@@ -10,7 +10,7 @@ import StatusCheckBox from '../CommonComponents/StatusCheckBox';
 import TitleHeading from '../CommonComponents/TitleHeading';
 
 const UsersContain = ({ data }) => {
-  const [userData, setUserdata] = useState('');
+  const [userData, setUserdata] = useState(data);
   useEffect(() => {
     const timeout = setTimeout(() => {
       setUserdata(data);

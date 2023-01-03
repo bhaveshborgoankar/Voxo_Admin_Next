@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import React from 'react';
 import CategoryForm from '../../../Components/Category/Form';
 import { UpdateCategoryss } from '../../../Constant';
@@ -6,7 +5,6 @@ import { getSingleCategory } from '../../../Constant/APIRoutes';
 import request from '../../../Utils/APIService';
 
 const UpdateCategory = ({ data }) => {
-  const router = useRouter();
   if (!data) return null;
   return <CategoryForm headTitle={UpdateCategoryss} data={data} />;
 };

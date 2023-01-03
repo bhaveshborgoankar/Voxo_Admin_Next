@@ -47,7 +47,16 @@ const LoginForm = () => {
       </FloatingInput>
       <div className='valid-feedback'>{Pleasefillthename}</div>
       <FloatingInput title={Password}>
-        <DivideInput inputtype='input' className='form-control' name='Password' placeholder='Password' type='password' register={{ ...register('Password', { required: true, minLength: 8 }) }} errors={errors.Password} minnumber={8} />
+        <DivideInput
+          inputtype='input'
+          className='form-control'
+          name='Password'
+          placeholder='Password'
+          type='password'
+          register={{ ...register('Password', { required: true, minLength: 8 }) }}
+          errors={errors.Password}
+          minnumber={8}
+        />
       </FloatingInput>
       <Link href={`/auth/forgot_password`} className='pass-forgot'>
         {Forgotyourpassword}

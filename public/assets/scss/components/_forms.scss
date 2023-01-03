@@ -2,287 +2,344 @@
     Form CSS Start
 ==========================**/
 .form-space {
-    margin-bottom: -10px;
+  margin-bottom: -10px;
 
-    >div {
-        margin-bottom: 10px;
-    }
+  > div {
+    margin-bottom: 10px;
+  }
 }
 
 .form-choose {
-    padding: 0;
+  padding: 0;
 }
 
 .select2-container {
-    .select2-dropdown {
-        background-color: $inner-bg;
-        border-color: $form-input-border-color !important;
-    }
+  .select2-dropdown {
+    background-color: $inner-bg;
+    border-color: $form-input-border-color !important;
+  }
 
-    .select2-search__field {
-        border-color: $form-input-border-color !important;
-    }
+  .select2-search__field {
+    border-color: $form-input-border-color !important;
+  }
 }
 
 .theme-form {
-    .ck-toolbar {
-        border-color: $form-input-border-color !important;
-        background-color: $inner-bg !important;
-    }
+  .ck-toolbar {
+    border-color: $form-input-border-color !important;
+    background-color: $inner-bg !important;
+  }
 
-    .select2-container {
-        .selection {
-            width: 100%;
-            background-color: $inner-bg !important;
-            border: 1px solid $form-input-border-color;
+  .select2-container {
+    .selection {
+      width: 100%;
+      background-color: $inner-bg !important;
+      border: 1px solid $form-input-border-color;
 
-            .select2-selection {
-                padding: 0;
-                display: flex !important;
-                align-content: center;
-            }
-        }
-    }
-
-    .select2-selection__rendered {
-        width: 100%;
+      .select2-selection {
+        padding: 0;
         display: flex !important;
-        align-items: center;
-        background-color: $inner-bg !important;
+        align-content: center;
+      }
     }
+  }
 
-    .ck-content {
-        height: 170px;
-        border-color: $form-input-border-color !important;
-        background-color: $inner-bg !important;
-    }
+  .select2-selection__rendered {
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    background-color: $inner-bg !important;
+  }
 
-    &-2 {
+  .ck-content {
+    height: 170px;
+    border-color: $form-input-border-color !important;
+    background-color: $inner-bg !important;
+  }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="search"],
-        input[type="password"],
-        input[type="number"],
-        input[type="tel"],
-        input[type="date"],
-        input[type="datetime-local"],
-        input[type="time"],
-        input[type="datetime-local"],
-        input[type="month"],
-        input[type="week"],
-        input[type="url"],
-        input[type="file"],
-        textarea,
-        select {
-            padding: 10px 10px !important;
-        }
-    }
-
-    .form-control {
-        :focus {
-            box-shadow: 0 0 0 0.2rem rgba(171, 140, 228, 0.05);
-        }
-    }
-
-    textarea {
-        border-color: $form-input-border-color;
-
-        &::-webkit-input-placeholder {
-            color: $form-placeholder-color;
-            font-size: $form-placeholder-font-size;
-            letter-spacing: $form-placeholder-letter-spacing;
-            font-weight: $form-placeholder-font-weight;
-        }
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="search"],
-    input[type="password"],
-    input[type="number"],
-    input[type="tel"],
-    input[type="date"],
-    input[type="datetime-local"],
-    input[type="time"],
-    input[type="datetime-local"],
-    input[type="month"],
-    input[type="week"],
-    input[type="url"],
-    input[type="file"],
+  &-2 {
+    input[type='text'],
+    input[type='email'],
+    input[type='search'],
+    input[type='password'],
+    input[type='number'],
+    input[type='tel'],
+    input[type='date'],
+    input[type='datetime-local'],
+    input[type='time'],
+    input[type='datetime-local'],
+    input[type='month'],
+    input[type='week'],
+    input[type='url'],
+    input[type='file'],
     textarea,
     select {
-        border-color: $form-input-border-color;
-        background-color: $inner-bg !important;
-        font-size: $form-placeholder-font-size;
-        color: $form-placeholder-color;
-        padding: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320))) 10px;
-        outline: inherit;
-        box-shadow: none;
-
-        &::-webkit-input-placeholder {
-            color: $form-placeholder-color;
-            font-size: $form-placeholder-font-size;
-            letter-spacing: $form-placeholder-letter-spacing;
-            font-weight: $form-placeholder-font-weight;
-        }
+      padding: 10px 10px !important;
     }
+  }
 
-    input[type="file"] {
-        height: auto;
+  .form-control {
+    :focus {
+      box-shadow: 0 0 0 0.2rem rgba(171, 140, 228, 0.05);
     }
+  }
 
-    select.form-control:not([size]):not([multiple]) {
-        border-color: $form-input-border-color;
-        font-size: $form-placeholder-font-size;
+  textarea {
+    border-color: $form-input-border-color;
+
+    &::-webkit-input-placeholder {
+      color: $form-placeholder-color;
+      font-size: $form-placeholder-font-size;
+      letter-spacing: $form-placeholder-letter-spacing;
+      font-weight: $form-placeholder-font-weight;
     }
+  }
 
-    .checkbox {
-        label {
-            padding-left: 10px;
-        }
+  input[type='text'],
+  input[type='email'],
+  input[type='search'],
+  input[type='password'],
+  input[type='number'],
+  input[type='tel'],
+  input[type='date'],
+  input[type='datetime-local'],
+  input[type='time'],
+  input[type='datetime-local'],
+  input[type='month'],
+  input[type='week'],
+  input[type='url'],
+  input[type='file'],
+  textarea,
+  select {
+    border-color: $form-input-border-color;
+    background-color: $inner-bg !important;
+    font-size: $form-placeholder-font-size;
+    color: $form-placeholder-color;
+    padding: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320))) 10px;
+    outline: inherit;
+    box-shadow: none;
+
+    &::-webkit-input-placeholder {
+      color: $form-placeholder-color;
+      font-size: $form-placeholder-font-size;
+      letter-spacing: $form-placeholder-letter-spacing;
+      font-weight: $form-placeholder-font-weight;
     }
+  }
 
-    .form-divider {
-        position: relative;
-        clear: both;
-        height: 0;
-        margin: 30px 0;
-        border-top: 1px solid $light-semi-gray;
+  input[type='file'] {
+    height: auto;
+  }
 
-        &:before {
-            position: absolute;
-            top: -11px;
-            left: 40%;
-            margin-left: -10px;
-            padding: 0 5px;
-            content: "Or Signup With";
-            color: $theme-font-color;
-            background: $white;
-        }
+  select.form-control:not([size]):not([multiple]) {
+    border-color: $form-input-border-color;
+    font-size: $form-placeholder-font-size;
+  }
+
+  .checkbox {
+    label {
+      padding-left: 10px;
     }
+  }
 
-    .login-divider {
-        position: relative;
-        clear: both;
-        height: 0;
-        margin: 30px 0;
-        border-top: 1px solid $light-semi-gray;
+  .form-divider {
+    position: relative;
+    clear: both;
+    height: 0;
+    margin: 30px 0;
+    border-top: 1px solid $light-semi-gray;
 
-        &:before {
-            position: absolute;
-            top: -11px;
-            left: 40%;
-            margin-left: -10px;
-            padding: 0 5px;
-            color: $theme-font-color;
-            background: $white;
-            content: "Or Login With";
-        }
+    &:before {
+      position: absolute;
+      top: -11px;
+      left: 40%;
+      margin-left: -10px;
+      padding: 0 5px;
+      content: 'Or Signup With';
+      color: $theme-font-color;
+      background: $white;
     }
+  }
 
-    .btn-fb,
-    .btn-twitter,
-    .btn-google,
-    .btn-linkedin {
-        color: $white;
-        width: 100%;
-    }
+  .login-divider {
+    position: relative;
+    clear: both;
+    height: 0;
+    margin: 30px 0;
+    border-top: 1px solid $light-semi-gray;
 
-    .btn-fb {
-        background-color: $fb;
+    &:before {
+      position: absolute;
+      top: -11px;
+      left: 40%;
+      margin-left: -10px;
+      padding: 0 5px;
+      color: $theme-font-color;
+      background: $white;
+      content: 'Or Login With';
     }
+  }
 
-    .btn-twitter {
-        background-color: $twitter;
-    }
+  .btn-fb,
+  .btn-twitter,
+  .btn-google,
+  .btn-linkedin {
+    color: $white;
+    width: 100%;
+  }
 
-    .btn-google {
-        background-color: $google-plus;
-    }
+  .btn-fb {
+    background-color: $fb;
+  }
 
-    .btn-linkedin {
-        background-color: $linkedin;
-    }
+  .btn-twitter {
+    background-color: $twitter;
+  }
+
+  .btn-google {
+    background-color: $google-plus;
+  }
+
+  .btn-linkedin {
+    background-color: $linkedin;
+  }
 }
 
 .form-inline {
-    display: flex;
-    flex: 0 0 auto;
-    flex-flow: row wrap;
-    align-items: center;
-    margin-bottom: 0;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 0;
 
-    .col-form-label {
-        margin-right: 5px;
-    }
+  .col-form-label {
+    margin-right: 5px;
+  }
 }
 
 .search-form {
-    .form-group {
-        &:before {
-            position: absolute;
-            content: "";
-            width: 1px;
-            height: 25px;
-            background: $suva-grey;
-            left: 82px;
-            top: 50px;
-        }
-
-        &:after {
-            position: absolute;
-            content: "\f002";
-            font-family: "FontAwesome";
-            top: 53px;
-            left: 53px;
-            color: $inner-bg;
-        }
+  .form-group {
+    &:before {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 25px;
+      background: $suva-grey;
+      left: 82px;
+      top: 50px;
     }
 
-    input {
-        border: 1px solid $light-semi-gray;
-        padding: 10px 10px 10px 70px;
-        border-radius: 10px;
-        background-color: rgba($light-color, 0.3);
-
-        &:focus {
-            outline: none !important;
-        }
+    &:after {
+      position: absolute;
+      content: '\f002';
+      font-family: 'FontAwesome';
+      top: 53px;
+      left: 53px;
+      color: $inner-bg;
     }
+  }
+
+  input {
+    border: 1px solid $light-semi-gray;
+    padding: 10px 10px 10px 70px;
+    border-radius: 10px;
+    background-color: rgba($light-color, 0.3);
+
+    &:focus {
+      outline: none !important;
+    }
+  }
 }
 
 .form-label-align-right {
-    label {
-        text-align: right;
-        padding-top: 17px;
-        font-weight: 500;
-    }
+  label {
+    text-align: right;
+    padding-top: 17px;
+    font-weight: 500;
+  }
 }
 
 .form-label-title {
-    font-size: 16px;
-    font-weight: 600;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .choose {
-    input {
-        padding-left: 108px !important;
-        position: relative;
+  input {
+    padding-left: 108px !important;
+    position: relative;
 
-        &[type="file"]::file-selector-button {
-            position: absolute;
-            padding: 25px 10px 14px;
-            top: 50%;
-            left: 11px;
-            background-color: $inner-bg !important;
-            transform: translateY(-50%);
-        }
-
-        &[type="file"]::file-selector-button:hover {
-            background-color: rgba($primary-color, 0.2);
-        }
+    &[type='file']::file-selector-button {
+      position: absolute;
+      padding: 25px 10px 14px;
+      top: 50%;
+      left: 11px;
+      background-color: $inner-bg !important;
+      transform: translateY(-50%);
     }
+
+    &[type='file']::file-selector-button:hover {
+      background-color: rgba($primary-color, 0.2);
+    }
+  }
+}
+
+.image-select-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  li {
+    display: flex;
+    width: 108px;
+    height: 108px;
+    border-radius: 8px;
+    border: 1px solid #efefef;
+    background-color: #f8f8f8;
+    padding: 8px;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .remove-icon {
+      position: absolute;
+      background-color: #939393;
+      border-radius: 4px;
+      color: #fff;
+      padding: 2px;
+      top: 5px;
+      right: 3px;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &.choosefile-input {
+      input[type='file'] {
+        height: 0;
+        overflow: hidden;
+        width: 0;
+        padding: 0 !important;
+      }
+
+      input[type='file'] + label {
+        color: var(--theme-color);
+        cursor: pointer;
+        display: flex;
+        font-weight: 600;
+        position: relative;
+        transition: all 0.3s;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }
 
 /**=====================

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { Phone } from 'react-feather';
+import { Plus, X } from 'react-feather';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { Col, Form, FormGroup, Label, Row } from 'reactstrap';
@@ -72,7 +72,20 @@ const FormCategory = ({ data }) => {
         <Row className='mb-4 align-items-center'>
           <Label className='form-label-title col-lg-2 col-md-3 mb-0'>{Image}</Label>
           <Col md='9' lg='10'>
-            <input className='form-control' type='file' name='Image' {...register('Image', { required: true })} />
+            <ul class='image-select-list'>
+              <li class='choosefile-input'>
+                <input type='file' {...register('Image', { required: true })} />
+                <label>
+                  <Plus />
+                </label>
+              </li>
+              <li>
+                <img src='selectedFile.data' class='img-fluid' alt='Image' />
+                <a href='' class='remove-icon'>
+                  <X />
+                </a>
+              </li>
+            </ul>
           </Col>
         </Row>
         <Row className='mb-4 align-items-center'>

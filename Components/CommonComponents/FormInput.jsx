@@ -3,7 +3,7 @@ import ErrorHandle from './ErrorHandle';
 
 const FormInput = (props) => {
   const { minnumber } = props.current;
-  const CapitalizeFirstName = props.current.name.charAt(0).toUpperCase() + props.current.name.slice(1);
+  const CapitalizeFirstName = props?.current?.name?.charAt(0).toUpperCase() + props?.current?.name?.slice(1);
   return (
     <>
       <input {...props.current} {...props.current.register} />
