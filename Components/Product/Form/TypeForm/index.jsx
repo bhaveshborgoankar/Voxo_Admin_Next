@@ -72,8 +72,8 @@ const TypeForm = (props) => {
         </Col>
       </div>
       <Col xs='12' className='text-end'>
-        <Btn attrBtn={{ className: 'btn-theme me-2 theme-bg-color mt-3 d-inline-block w-auto ms-auto', type: 'button', onClick: () => setActiveTab(1) }}>{Prev}</Btn>
-        <Btn attrBtn={{ className: 'btn-theme theme-bg-color mt-3 d-inline-block w-auto', type: 'submit' }}>{Next}</Btn>
+        <Btn attrBtn={{ className: 'me-2 mt-3 d-inline-block w-auto ms-auto', type: 'button', onClick: () => setActiveTab(1) }}>{Prev}</Btn>
+        <Btn attrBtn={{ className: 'btn-primary mt-3 d-inline-block w-auto', type: 'submit' }}>{Next}</Btn>
       </Col>
     </Form>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Col, Form } from 'reactstrap';
 import { Btn } from '../../../../AbstractElements';
-import { Next, Prev, Submit } from '../../../../Constant';
+import { Prev, Submit } from '../../../../Constant';
 import { StockStatusOption } from '../../../../Data/Products';
 import DivideInput from '../../../CommonComponents/DivideInput';
 
@@ -53,8 +53,8 @@ const StockForm = (props) => {
       </div>
 
       <Col xs='12' className='text-end'>
-        <Btn attrBtn={{ className: 'btn-theme me-2 theme-bg-color mt-3 d-inline-block w-auto ms-auto', type: 'button', onClick: () => setActiveTab(2) }}>{Prev}</Btn>
-        <Btn attrBtn={{ className: 'btn-theme theme-bg-color mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>
+        <Btn attrBtn={{ className: 'me-2 mt-3 d-inline-block w-auto ms-auto', type: 'button', onClick: () => setActiveTab(2) }}>{Prev}</Btn>
+        <Btn attrBtn={{ className: 'btn-primary mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>
       </Col>
     </Form>
   );

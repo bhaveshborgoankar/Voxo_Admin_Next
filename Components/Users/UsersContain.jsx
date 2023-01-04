@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { Card, CardBody, Col, Container, Row } from 'reactstrap';
@@ -5,12 +6,12 @@ import { AllUserss } from '../../Constant';
 import { userStatusAPI } from '../../Constant/APIRoutes';
 import { AllUserColumn } from '../../Data/Users/AllUser';
 import { ModifyDate } from '../../Utils/ModifyDate';
-import Pagination from '../CommonComponents/Pagination';
 import StatusCheckBox from '../CommonComponents/StatusCheckBox';
 import TitleHeading from '../CommonComponents/TitleHeading';
 
 const UsersContain = ({ data }) => {
-  const [userData, setUserdata] = useState(data);
+  const router = useRouter();
+  const [userData, setUserdata] = useState('');
   useEffect(() => {
     const timeout = setTimeout(() => {
       setUserdata(data);
@@ -27,7 +28,7 @@ const UsersContain = ({ data }) => {
               <CardBody>
                 <div>
                   <div className='table-responsive table-desi'>
-                    {userData.length > 0 && (
+                    {userData.length > 0 ? (
                       <DataTable
                         data={userData.map((item, i) => ({
                           ...item,
@@ -37,12 +38,18 @@ const UsersContain = ({ data }) => {
                         }))}
                         columns={AllUserColumn}
                         pagination
+                        highlightOnHover
+                        pointerOnHover
+                        onRowClicked={(row) => router.push(`/user/edit/${row._id}`)}
                       />
+                    ) : (
+                      <div>
+                        <p>No data found</p>
+                      </div>
                     )}
                   </div>
                 </div>
               </CardBody>
-              <Pagination />
             </Card>
           </Col>
         </Row>

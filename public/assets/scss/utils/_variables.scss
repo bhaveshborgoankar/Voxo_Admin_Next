@@ -1,5 +1,5 @@
 :root {
-    --theme-color: #e22454;
+  --theme-color: #e22454;
 }
 
 // General variables
@@ -22,7 +22,7 @@ $inner-bg: #f2f9fc;
 $grey-darker: #222222;
 $bg-color: #fafafb;
 $primary-color: #e22454;
-$secondary-color: #ef3f3e;
+$secondary-color: #353535;
 $success-color: #9e65c2;
 $info-color: #a927f9;
 $warning-color: #747dc6;
@@ -90,8 +90,7 @@ $light-body-bg-color: #fafdff;
 
 //fonts
 $font-rubik: Rubik;
-$font-roboto: Nunito,
-sans-serif;
+$font-roboto: Nunito, sans-serif;
 $font-serif: sans-serif;
 $font-themify: themify;
 $font-awesome: FontAwesome;
@@ -174,8 +173,8 @@ $according-btn-weight: 500;
 $according-btn-color: $theme-body-font-color;
 $according-card-header-padding: 0.75rem 1.25rem;
 $according-card-header-icon: $font-ICO;
-$according-open-icon: "\eb73";
-$according-close-icon: "\eb7a";
+$according-open-icon: '\eb73';
+$according-close-icon: '\eb7a';
 
 //Alert settings
 $alert-hover-color: $dark-color;
@@ -220,7 +219,6 @@ $card-header-span-color: $theme-body-sub-title-color;
 $card-body-bg-color: $transparent-color;
 $card-footer-bg-color: $white;
 $card-hover-box-shadow: 0 0 40px rgba(8, 21, 66, 0.05);
-
 
 //footer settings
 $footer_bg_color: $white;
@@ -282,8 +280,8 @@ $sidebar-hover-txt-color: var(--theme-color);
 $sidebar-arrow-margin-top: 2px;
 $sidebar-arrow-size: 15px;
 $sidebar-arrow-color: $theme-body-font-color;
-$sidebar-open-icon: "\f107";
-$sidebar-close-icon: "\f105";
+$sidebar-open-icon: '\f107';
+$sidebar-close-icon: '\f105';
 $sidebar-icon-font-family: $font-awesome;
 $sidebar-height: calc(100vh - 115px);
 
@@ -307,7 +305,7 @@ $page-small-title-margin-bottom: 5px;
 $page-small-title-text-transform: capitalize;
 $page-small-title-text-color: $theme-body-sub-title-color;
 $breadcrumb-size: 16px;
-$breadcrumb-content: "/";
+$breadcrumb-content: '/';
 
 //main header left settings
 $header-left-bg-color: $white;
@@ -323,19 +321,20 @@ $box-layout-space: 40px;
 
 //Breake Points settings
 
-
-$min-breakpoints: (lg: 992px,
-    xl: 1200px,
-    2xl: 1366px,
+$min-breakpoints: (
+  lg: 992px,
+  xl: 1200px,
+  2xl: 1366px,
 );
 
-$max-breakpoints: (2xs: 360px,
-    xs: 480px,
-    sm: 575px,
-    md: 767px,
-    lg: 991px,
-    xl: 1199px,
-    2xl: 1366px,
-    3xl: 1460px,
-    4xl: 1660px,
+$max-breakpoints: (
+  2xs: 360px,
+  xs: 480px,
+  sm: 575px,
+  md: 767px,
+  lg: 991px,
+  xl: 1199px,
+  2xl: 1366px,
+  3xl: 1460px,
+  4xl: 1660px,
 );

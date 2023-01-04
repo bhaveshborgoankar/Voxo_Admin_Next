@@ -36,8 +36,8 @@ const ActionButtons = ({ row, editRedirectLink, deleteAPILink, toReRender }) => 
         <ModalHeader toggle={toggle}>{ConfirmDelete}</ModalHeader>
         <ModalBody>{Areyousure}</ModalBody>
         <ModalFooter>
-          <Btn attrBtn={{ color: 'primary', onClick: () => onUserDelete() }}>{Yes}</Btn>
-          <Btn attrBtn={{ color: 'warning', onClick: toggle }}>{No}</Btn>
+          <Btn attrBtn={{ className: 'btn-primary', onClick: () => onUserDelete() }}>{Yes}</Btn>
+          <Btn attrBtn={{ onClick: toggle }}>{No}</Btn>
         </ModalFooter>
       </Modal>
     </>

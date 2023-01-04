@@ -40,7 +40,7 @@ export const AllUserColumn = [
   },
   {
     name: 'Action',
-    cell: (row) => <ActionButtons row={row} editRedirectLink={'/user/edit/'} deleteAPILink={deleteUserAPI} toReRender={'/users'} />,
+    cell: (row) => <ActionButtons row={row} editRedirectLink={'/user/edit/'} deleteAPILink={deleteUserAPI} toReRender={'/user'} />,
     sortable: true,
     compact: true,
   },

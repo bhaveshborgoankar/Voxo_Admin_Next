@@ -1,11 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Col, Form, Label, Row } from 'reactstrap';
-import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import { createUserAPI, editUserAPI } from '../../../Constant/APIRoutes';
 import request from '../../../Utils/APIService';
-import { EmailAddress, FirstName, Phone, Submit } from '../../../Constant';
+import { Back, EmailAddress, FirstName, Phone, Submit } from '../../../Constant';
 import { Btn } from '../../../AbstractElements';
 import DivideInput from '../../CommonComponents/DivideInput';
 import UserPasswordField from './UserPasswordField';
@@ -29,10 +28,7 @@ const AccountTabData = ({ data }) => {
       const Res = await request({ url: createUserAPI, method: 'POST', data: formData });
       if (Res.status == 200) {
         reset();
-        toast.success('User successfully add');
         router.push('/user');
-      } else {
-        toast.warning('Someting went wrong');
       }
     }
   };
@@ -45,7 +41,6 @@ const AccountTabData = ({ data }) => {
       };
       const Res = await request({ url: `${editUserAPI}/${data._id}`, method: 'PUT', data: editedData });
       if (Res.status === 200) {
-        toast.success('User update successfully');
         router.push('/user');
       }
     }
@@ -83,7 +78,8 @@ const AccountTabData = ({ data }) => {
             />
           </Col>
         </Row>
-        <Btn attrBtn={{ className: 'btn-theme theme-bg-color mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>
+        <Btn attrBtn={{ className: 'mt-3 me-2 d-inline-block w-auto', type: 'button', onClick: () => router.back() }}>{Back}</Btn>
+        <Btn attrBtn={{ className: 'btn-primary mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>
       </Row>
     </Form>
   );

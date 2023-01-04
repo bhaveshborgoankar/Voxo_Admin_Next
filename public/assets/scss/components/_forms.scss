@@ -318,26 +318,40 @@
     }
     &.choosefile-input {
       input[type='file'] {
-        height: 0;
-        overflow: hidden;
-        width: 0;
-        padding: 0 !important;
-      }
-
-      input[type='file'] + label {
-        color: var(--theme-color);
-        cursor: pointer;
-        display: flex;
-        font-weight: 600;
-        position: relative;
-        transition: all 0.3s;
-        align-items: center;
-        justify-content: center;
-        font-size: 35px;
-        margin-top: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
+        opacity: 0;
+        z-index: 1;
+        cursor: pointer;
+        + label {
+          color: var(--theme-color);
+          cursor: pointer;
+          font-weight: 600;
+          transition: all 0.3s;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          margin: 0;
+          z-index: 0;
+        }
       }
+
+      // input[type='file'] + label {
+      //   color: var(--theme-color);
+      //   cursor: pointer;
+      //   font-weight: 600;
+      //   transition: all 0.3s;
+      //   position: absolute;
+      //   top: 50%;
+      //   left: 50%;
+      //   transform: translate(-50%, -50%);
+      //   margin: 0;
+      //   z-index: 0;
+      // }
     }
   }
 }

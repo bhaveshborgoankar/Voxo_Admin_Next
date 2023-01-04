@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
 
 const client = axios.create({
   baseURL: process.env.API_URL,
@@ -14,6 +15,7 @@ const request = async ({ ...options }) => {
   } else client.defaults.headers.common.Authorization = `Bearer ${uat}`;
 
   const onSuccess = (response) => {
+    toast.success(response.data.msg, { autoClose: 1000 });
     return response;
   };
 

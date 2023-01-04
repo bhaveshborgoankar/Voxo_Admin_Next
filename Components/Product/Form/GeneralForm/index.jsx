@@ -81,7 +81,7 @@ const GeneralForm = (props) => {
           </Col>
         </div>
         <div className='mb-4 row align-items-center'>
-          <Btn attrBtn={{ className: 'btn-theme theme-bg-color mt-3 d-inline-block w-auto ms-auto', type: 'submit' }}>{Next}</Btn>
+          <Btn attrBtn={{ className: 'btn-primary mt-3 d-inline-block w-auto ms-auto', type: 'submit' }}>{Next}</Btn>
         </div>
       </Row>
     </Form>

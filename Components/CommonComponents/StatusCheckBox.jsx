@@ -10,12 +10,12 @@ const StatusCheckBox = (props) => {
   const onStatusChange = async (e) => {
     setIsAvtive(e.target.checked);
     const Res = await request({ url: `${urlStatus}${item._id}/${e.target.checked}`, method: 'PUT' });
-    if (Res.status === 200) {
-      toast.success('Status is Update', { autoClose: 1000 });
-    }
+    // if (Res.status === 200) {
+    //   toast.success('Status is Update', { autoClose: 1000 });
+    // }
   };
   return (
-    <FormGroup switch className='form-check form-switch'>
+    <FormGroup switch>
       <Input className='form-check-input' type='checkbox' onChange={(e) => onStatusChange(e)} checked={isActive} />
     </FormGroup>
   );

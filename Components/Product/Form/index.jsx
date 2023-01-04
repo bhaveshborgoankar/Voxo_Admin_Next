@@ -8,7 +8,6 @@ import StockForm from './StockForm';
 const AddProductContain = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [data, setData] = useState();
-  console.log('datadatadata', data);
   return (
     <Container fluid={true}>
       <Row>

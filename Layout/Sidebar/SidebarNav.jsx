@@ -43,7 +43,8 @@ const SidebarNav = () => {
                 <li className='sidebar-list' key={i}>
                   {elem.type === 'link' ? (
                     <Link href={elem.path} className={`sidebar-link sidebar-title link-nav${activeMenu === elem.name ? ' active' : ''}`}>
-                      {elem.name}
+                      {elem.icon}
+                      <span>{elem.name}</span>
                     </Link>
                   ) : (
                     <a

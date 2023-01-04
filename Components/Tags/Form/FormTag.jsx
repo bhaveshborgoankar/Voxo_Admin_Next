@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Col, Form, FormGroup, Label, Row } from 'reactstrap';
 import { Btn } from '../../../AbstractElements';
-import { Submit } from '../../../Constant';
+import { Back, Submit } from '../../../Constant';
 import { createTagAPI, updateTagAPI } from '../../../Constant/APIRoutes';
 import request from '../../../Utils/APIService';
 import ErrorHandle from '../../CommonComponents/ErrorHandle';
@@ -53,8 +53,8 @@ const FormTag = ({ data }) => {
             </FormGroup>
           </Col>
         </Row>
-
-        <Btn attrBtn={{ className: 'btn-theme theme-bg-color mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>
+        <Btn attrBtn={{ className: 'mt-3 me-2 d-inline-block w-auto', type: 'button', onClick: () => router.back() }}>{Back}</Btn>
+        <Btn attrBtn={{ className: 'btn-primary mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>
       </Row>
     </Form>
   );
