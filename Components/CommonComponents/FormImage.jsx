@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Plus, X } from 'react-feather';
 import { Label } from 'reactstrap';
 import ProductContext from '../../Helper/ProductContext';
@@ -7,11 +7,12 @@ import ErrorHandle from './ErrorHandle';
 const FormImage = (props) => {
   const { minnumber, name, type } = props?.current;
   const { categoryImage, setCategoryImage } = useContext(ProductContext);
+  const [imageUpdate, setImageUpdate] = useState('');
   const handleChange = (e) => {
+    setImageUpdate(URL.createObjectURL(e.target.files[0]));
     setCategoryImage(URL.createObjectURL(e.target.files[0]));
   };
   const CapitalizeFirstName = props?.current?.name?.charAt(0).toUpperCase() + props?.current?.name?.slice(1);
-
   return (
     <>
       <ul className='image-select-list'>
@@ -23,16 +24,20 @@ const FormImage = (props) => {
         </li>
         {categoryImage !== '' && (
           <li>
-            <img src={props.data ? `${process.env.API_URL}/${categoryImage}` : categoryImage} className='img-fluid' alt='Image' />
-            <a
-              href='#'
-              className='remove-icon'
-              onClick={() => {
-                props.reset(name);
-                setCategoryImage('');
-              }}>
-              <X />
-            </a>
+            <img src={imageUpdate ? imageUpdate : props.data ? `${process.env.API_URL}/${categoryImage}` : categoryImage} className='img-fluid' alt='Category image' />
+            {!props.data && (
+              <a
+                href='#'
+                className='remove-icon'
+                onClick={(e) => {
+                  e.preventDefault();
+                  props.reset(name);
+                  setImageUpdate('');
+                  setCategoryImage('');
+                }}>
+                <X />
+              </a>
+            )}
           </li>
         )}
       </ul>

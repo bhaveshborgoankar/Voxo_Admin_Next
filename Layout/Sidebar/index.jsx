@@ -10,7 +10,7 @@ const Sidebar = () => {
       <div>
         <div className='logo-wrapper logo-wrapper-center'>
           <a href='#javascript'>
-            <img className='img-fluid for-dark' src={'/assets/images/logo/logo-white.png'} alt='' />
+            <img className='img-fluid for-dark' src={'/assets/images/logo/logo-white.png'} alt='dark image' />
           </a>
           <div className='back-btn'>
             <i className='fa fa-angle-left'></i>
@@ -21,7 +21,7 @@ const Sidebar = () => {
         </div>
         <div className='logo-icon-wrapper'>
           <a href='#javascript'>
-            <img className='img-fluid main-logo' src={'/assets/images/logo/logo.png'} alt='logo' />
+            <img className='img-fluid main-logo' src={'/assets/images/logo/logo.png'} alt='hd logo' />
           </a>
         </div>
         <SidebarNav />

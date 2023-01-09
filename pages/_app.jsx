@@ -13,45 +13,47 @@ const MyApp = ({ Component, pageProps }) => {
   const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  // useEffect(()=>{
+  //   if (typeof window === 'undefined')
+  // },[])
+    // useEffect(() => {
+    //   setIsLoading(true);
+    //   const handleStart = (url) => {
+    //     console.log(`Loading: ${url}`);
+    //     setIsLoading(true);
+    //     // setTimeout(() => {
+    //     //   setIsLoading(true);
+    //     // }, 5000);
+    //   };
 
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   const handleStart = (url) => {
-  //     console.log(`Loading: ${url}`);
-  //     setIsLoading(true);
-  //     // setTimeout(() => {
-  //     //   setIsLoading(true);
-  //     // }, 5000);
-  //   };
+    //   const handleStop = () => {
+    //     setIsLoading(false);
+    //   };
 
-  //   const handleStop = () => {
-  //     setIsLoading(false);
-  //   };
+    //   router.events.on('routeChangeStart', handleStart);
+    //   router.events.on('routeChangeComplete', handleStop);
+    //   // router.events.on('routeChangeError', handleStop);
 
-  //   router.events.on('routeChangeStart', handleStart);
-  //   router.events.on('routeChangeComplete', handleStop);
-  //   // router.events.on('routeChangeError', handleStop);
-
-  //   return () => {
-  //     router.events.off('routeChangeStart', handleStart);
-  //     router.events.off('routeChangeComplete', handleStop);
-  //     // router.events.off('routeChangeError', handleStop);
-  //   };
-  // }, [router]);
-  return (
-    <>
-      <ProductProvider>
+    //   return () => {
+    //     router.events.off('routeChangeStart', handleStart);
+    //     router.events.off('routeChangeComplete', handleStop);
+    //     // router.events.off('routeChangeError', handleStop);
+    //   };
+    // }, [router]);
+    return (
+      <>
         <UserProvider>
-          <ToggleProvider>
-            <NextNProgress color='#e22454' />
-            {/* {isLoading ? <NextNProgress /> : console.log('Else=>>>>isLoading', isLoading)} */}
-            {getLayout(<Component {...pageProps} />)}
-          </ToggleProvider>
+          <ProductProvider>
+            <ToggleProvider>
+              <NextNProgress color='#e22454' />
+              {/* {isLoading ? <NextNProgress /> : console.log('Else=>>>>isLoading', isLoading)} */}
+              {getLayout(<Component {...pageProps} />)}
+            </ToggleProvider>
+          </ProductProvider>
         </UserProvider>
-      </ProductProvider>
-      <ToastContainer />
-    </>
-  );
+        <ToastContainer />
+      </>
+    );
 };
 
 export default MyApp;

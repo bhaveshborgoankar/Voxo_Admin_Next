@@ -6,7 +6,7 @@ const ToggleProvider = (props) => {
   const [deleteModal, setDeleteModal] = useState({ isDelete: false, value: '' });
   const [sidebarToggle, setSidebarToggle] = useState(false);
   const [getProducts, setGetProducts] = useState({
-    productimage: <img src={'/assets/images/users/1.jpg'} className='img-fluid' width={70} alt='' />,
+    productimage: <img src={'/assets/images/users/1.jpg'} className='img-fluid' width={70} alt='product' />,
     published: <span className={'lnr lnr-cross-circle'}></span>,
     qty: 1,
     option: (

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { Card, CardBody, Col, Container, Row } from 'reactstrap';
@@ -9,6 +10,7 @@ import TitleHeading from '../CommonComponents/TitleHeading';
 
 const CategoryContain = ({ data }) => {
   const [categoryData, setCategoryData] = useState([]);
+  const router=useRouter();
   useEffect(() => {
     let timer = setTimeout(() => {
       setCategoryData(data);
@@ -35,6 +37,9 @@ const CategoryContain = ({ data }) => {
                         }))}
                         columns={CategoryColumn}
                         pagination
+                        highlightOnHover
+                        pointerOnHover
+                        onRowClicked={(row) => router.push(`/category/edit/${row._id}`)}
                       />
                     )}
                   </div>

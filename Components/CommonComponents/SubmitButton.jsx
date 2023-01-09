@@ -3,7 +3,7 @@ import { Btn } from '../../AbstractElements';
 const SubmitButton = ({ title, isLoader }) => {
   return (
     <div className='button login'>
-      <Btn attrBtn={{ type: 'submit' }}>
+      <Btn attrBtn={{ type: 'submit',className:"btn-primary" }}>
         <span>{title}</span>
         {isLoader && <div className='loading'></div>}
       </Btn>

@@ -1,12 +1,13 @@
-import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
-import { Col, Form, FormGroup, Label, Row } from 'reactstrap';
+import { Form, FormGroup, Row } from 'reactstrap';
 import { Btn } from '../../../AbstractElements';
-import { Back, Submit } from '../../../Constant';
+import { Back, Status, Submit, TagName } from '../../../Constant';
 import { createTagAPI, updateTagAPI } from '../../../Constant/APIRoutes';
 import request from '../../../Utils/APIService';
-import ErrorHandle from '../../CommonComponents/ErrorHandle';
+import DivideInput from '../../CommonComponents/DivideInput';
+import FormInputWrapper from '../../CommonComponents/FormInputWrapper';
 
 const FormTag = ({ data }) => {
   const [activeStatus, setActiveStatus] = useState(data?.is_active ?? true);
@@ -38,22 +39,15 @@ const FormTag = ({ data }) => {
   return (
     <Form className='theme-form theme-form-2 mega-form' onSubmit={handleSubmit(data ? updateTag : onAddTag)}>
       <Row>
-        <Row className='mb-4 align-items-center'>
-          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>Tag Name*</Label>
-          <Col md='9' lg='10'>
-            <input className='form-control' type='text' name='name' {...register('name', { required: 'This field is required' })} />
-            <ErrorHandle errors={errors.name} message={'Name is required'} />
-          </Col>
-        </Row>
-        <Row className='mb-4 align-items-center'>
-          <Label className='form-label-title col-lg-2 col-md-3 mb-0'>Status:</Label>
-          <Col md='9' lg='10'>
-            <FormGroup switch className='form-check form-switch'>
-              <input className='form-check-input' type='checkbox' onChange={() => setActiveStatus(activeStatus)} defaultChecked={activeStatus} name='is_active' {...register('is_active')} />
-            </FormGroup>
-          </Col>
-        </Row>
-        <Btn attrBtn={{ className: 'mt-3 me-2 d-inline-block w-auto', type: 'button', onClick: () => router.back() }}>{Back}</Btn>
+        <FormInputWrapper title={TagName} md='9' lg='10'>
+          <DivideInput inputtype='input' className='form-control' type='text' name='name' register={{ ...register('name', { required: true }) }} errors={errors.name} placeholder='Enter Tag Name' />
+        </FormInputWrapper>
+        <FormInputWrapper title={Status} md='9' lg='10'>
+          <FormGroup switch className='form-check form-switch'>
+            <input className='form-check-input' type='checkbox' onChange={() => setActiveStatus(activeStatus)} defaultChecked={activeStatus} name='is_active' {...register('is_active')} />
+          </FormGroup>
+        </FormInputWrapper>
+        <Btn attrBtn={{ className: 'mt-3 me-2 d-inline-block w-auto', type: 'button', onClick: () => router.push('/tag') }}>{Back}</Btn>
         <Btn attrBtn={{ className: 'btn-primary mt-3 d-inline-block w-auto', type: 'submit' }}>{Submit}</Btn>
       </Row>
     </Form>

@@ -3,11 +3,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 import { General, Stock, Type } from '../../../Constant';
 
 const NavTab = (props) => {
-  const { activeTab, setActiveTab } = props;
-
-  const handleSetActive = (tab) => {
-    setActiveTab(tab);
-  };
+  const { activeTab } = props;
   return (
     <Nav className='nav-pills mb-3'>
       <NavItem>

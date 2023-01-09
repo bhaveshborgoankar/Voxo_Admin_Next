@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { Card, CardBody, Col, Container, Row } from 'reactstrap';
@@ -10,7 +11,7 @@ import TitleHeading from '../CommonComponents/TitleHeading';
 
 const TagContain = ({ data }) => {
   const [tagData, setTagData] = useState([]);
-
+  const router = useRouter();
   useEffect(() => {
     const timer = setTimeout(() => {
       setTagData(data);
@@ -37,6 +38,9 @@ const TagContain = ({ data }) => {
                         }))}
                         columns={TagData}
                         pagination
+                        highlightOnHover
+                        pointerOnHover
+                        onRowClicked={(row) => router.push(`/tag/edit/${row._id}`)}
                       />
                     )}
                   </div>
