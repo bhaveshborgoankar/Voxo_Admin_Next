@@ -75,45 +75,23 @@ export const AllMenus = [
       },
     ],
   },
-  // {
-  //   name: 'Orders',
-  //   icon: <Archive />,
-  //   active: false,
-  //   children: [
-  //     {
-  //       name: 'Order List',
-  //       path: '/order_list',
-  //       type: 'link',
-  //     },
-  //     {
-  //       name: 'Order Detail',
-  //       path: '/order_detail',
-  //       type: 'link',
-  //     },
-  //     {
-  //       name: 'Order Tracking',
-  //       path: '/order_tracking',
-  //       type: 'link',
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: 'Product',
-  //   icon: <Box />,
-  //   active: false,
-  //   children: [
-  //     {
-  //       name: 'Products',
-  //       path: '/products',
-  //       type: 'link',
-  //     },
-  //     {
-  //       name: 'Add New Products',
-  //       path: '/add_product',
-  //       type: 'link',
-  //     },
-  //   ],
-  // },
+  {
+    name: 'Blog',
+    icon: <Box />,
+    active: false,
+    children: [
+      {
+        name: 'Blogs',
+        path: '/blog',
+        type: 'link',
+      },
+      {
+        name: 'Add New Blog',
+        path: '/blog/add',
+        type: 'link',
+      },
+    ],
+  },
   {
     name: 'Settings',
     icon: <Settings />,

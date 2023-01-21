@@ -29,9 +29,17 @@ export const deleteTagAPI = '/api/tag/delete/';
 export const tagStatusAPI = '/api/tag/';
 
 // Products APIs
-// export const getTagAPI = '/api/tag/tags';
-// export const getSingleTagAPI = '/api/tag/';
-// export const createTagAPI = '/api/tag/create';
-// export const updateTagAPI = '/api/tag/edit/';
+export const getProductAPI = '/api/product/products';
+export const getSingleProductAPI = '/api/product/';
+export const createProductAPI = '/api/product/create';
+export const updateProductAPI = '/api/product/edit/';
 export const deleteProductAPI = '/api/product/delete/';
 export const productStatusAPI = '/api/product/';
+
+// Blogs APIs
+export const getBlogAPI = '/api/blog/blogs';
+export const getSingleBlogAPI = '/api/blog/';
+export const createBlogAPI = '/api/blog/create';
+export const updateBlogAPI = '/api/blog/edit/';
+export const deleteBlogAPI = '/api/blog/delete/';
+export const blogStatusAPI = '/api/blog/';

@@ -9,7 +9,6 @@ import UserContext from '../../../Helper/UserContext';
 import request from '../../../Utils/APIService';
 import DivideInput from '../../CommonComponents/DivideInput';
 import FloatingInput from '../../CommonComponents/FloatingInput';
-import FormInput from '../../CommonComponents/FormInput';
 import SubmitButton from '../../CommonComponents/SubmitButton';
 
 const ForgotPasswordContain = () => {

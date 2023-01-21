@@ -1,25 +1,24 @@
-import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
+import { useRouter } from 'next/router';
 import { Card, CardBody, Col, Container, Row } from 'reactstrap';
-import { AllCategories } from '../../Constant';
-import { categoryStatusAPI } from '../../Constant/APIRoutes';
-import { CategoryColumn } from '../../Data/CategoryData';
-import StatusCheckBox from '../CommonComponents/StatusCheckBox';
 import TitleHeading from '../CommonComponents/TitleHeading';
-
-const CategoryContain = ({ data }) => {
-  const [categoryData, setCategoryData] = useState([]);
+import StatusCheckBox from '../CommonComponents/StatusCheckBox';
+import { AllBlogs } from '../../Constant';
+import { BlogData } from '../../Data/BlogData';
+import { blogStatusAPI } from '../../Constant/APIRoutes';
+const BlogContain = ({ data }) => {
+  const [blogData, setBlogData] = useState([]);
   const router = useRouter();
   useEffect(() => {
     let timer = setTimeout(() => {
-      setCategoryData(data);
+      setBlogData(data);
     }, 100);
     return () => clearTimeout(timer);
   }, [data]);
   return (
     <>
-      <TitleHeading btn={true} title={AllCategories} redirectUrl={'/category/add'} />
+      <TitleHeading btn={true} title={AllBlogs} redirectUrl={'/blog/add'} />
       <Container fluid={true}>
         <Row>
           <Col sm='12'>
@@ -27,19 +26,19 @@ const CategoryContain = ({ data }) => {
               <CardBody>
                 <div>
                   <div className='table-responsive table-desi'>
-                    {categoryData.length > 0 && (
+                    {blogData.length > 0 && (
                       <DataTable
-                        data={categoryData.map((item, i) => ({
+                        data={blogData.map((item, i) => ({
                           ...item,
                           Sr_No: i + 1,
-                          image: <img className='mt-2 mb-2' src={`${process.env.API_URL}/${item.image}`} alt='Image' height={50} width={50} />,
-                          activeStatus: <StatusCheckBox item={item} urlStatus={categoryStatusAPI} />,
+                          image: <img className='mt-2 mb-2' src={`${process.env.API_URL}/${item.image}`} alt='Blog Image' height={50} width={50} />,
+                          activeStatus: <StatusCheckBox item={item} urlStatus={blogStatusAPI} />,
                         }))}
-                        columns={CategoryColumn}
+                        columns={BlogData}
                         pagination
                         highlightOnHover
                         pointerOnHover
-                        onRowClicked={(row) => router.push(`/category/edit/${row._id}`)}
+                        onRowClicked={(row) => router.push(`/blog/edit/${row._id}`)}
                       />
                     )}
                   </div>
@@ -53,4 +52,4 @@ const CategoryContain = ({ data }) => {
   );
 };
 
-export default CategoryContain;
+export default BlogContain;

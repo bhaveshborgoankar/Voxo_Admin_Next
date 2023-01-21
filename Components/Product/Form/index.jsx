@@ -6,7 +6,7 @@ import TypeForm from './TypeForm';
 import StockForm from './StockForm';
 
 const AddProductContain = () => {
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(1);
   const [data, setData] = useState();
   return (
     <Container fluid={true}>
