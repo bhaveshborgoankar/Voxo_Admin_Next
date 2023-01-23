@@ -6,6 +6,7 @@ import { AllUserss } from '../../Constant';
 import { userStatusAPI } from '../../Constant/APIRoutes';
 import { AllUserColumn } from '../../Data/Users/AllUser';
 import { ModifyDate } from '../../Utils/ModifyDate';
+import DataNotFound from '../CommonComponents/DataNotFound';
 import StatusCheckBox from '../CommonComponents/StatusCheckBox';
 import TitleHeading from '../CommonComponents/TitleHeading';
 
@@ -43,9 +44,7 @@ const UsersContain = ({ data }) => {
                         onRowClicked={(row) => router.push(`/user/edit/${row._id}`)}
                       />
                     ) : (
-                      <div>
-                        <p>No data found</p>
-                      </div>
+                      <DataNotFound />
                     )}
                   </div>
                 </div>

@@ -6,6 +6,7 @@ import { AllTags } from '../../Constant';
 import { tagStatusAPI } from '../../Constant/APIRoutes';
 import { TagData } from '../../Data/TagData';
 import { ModifyDate } from '../../Utils/ModifyDate';
+import DataNotFound from '../CommonComponents/DataNotFound';
 import StatusCheckBox from '../CommonComponents/StatusCheckBox';
 import TitleHeading from '../CommonComponents/TitleHeading';
 
@@ -28,7 +29,7 @@ const TagContain = ({ data }) => {
               <CardBody>
                 <div>
                   <div className='table-responsive table-desi'>
-                    {tagData.length > 0 && (
+                    {tagData.length > 0 ? (
                       <DataTable
                         data={tagData.map((item, i) => ({
                           ...item,
@@ -42,6 +43,8 @@ const TagContain = ({ data }) => {
                         pointerOnHover
                         onRowClicked={(row) => router.push(`/tag/edit/${row._id}`)}
                       />
+                    ) : (
+                      <DataNotFound />
                     )}
                   </div>
                 </div>

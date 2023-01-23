@@ -5,16 +5,11 @@ import { Form, FormGroup, Row } from 'reactstrap';
 import { Btn } from '../../../AbstractElements';
 import { Back, Image, Name, Status, Submit } from '../../../Constant';
 import { createCategoryAPI, updateCategoryAPI } from '../../../Constant/APIRoutes';
-import ProductContext from '../../../Helper/ProductContext';
 import request from '../../../Utils/APIService';
 import DivideInput from '../../CommonComponents/DivideInput';
 import FormInputWrapper from '../../CommonComponents/FormInputWrapper';
 const FormCategory = ({ data }) => {
-  useEffect(() => {
-    !data && setCategoryImage('');
-  }, [data]);
   const [activeStatus, setActiveStatus] = useState(data?.is_active ?? true);
-  const { setCategoryImage } = useContext(ProductContext);
   const router = useRouter();
   const {
     register,
@@ -25,7 +20,7 @@ const FormCategory = ({ data }) => {
     defaultValues: {
       name: data?.name ?? '',
       is_active: data?.is_active ?? true,
-      image: data ? setCategoryImage(data.image) : '',
+      image: data ? data.image : '',
     },
   });
   const addNewCategory = async (formData) => {
@@ -43,12 +38,13 @@ const FormCategory = ({ data }) => {
     }
   };
   const UpdateCategoryForm = async (formData) => {
+    console.log("🚀 ~ file: FormContain.jsx:41 ~ UpdateCategoryForm ~ formData", formData)
+    
     let form_Data = new FormData();
     form_Data.append('name', formData.name);
     form_Data.append('is_active', formData.is_active);
     if (formData.image) {
       form_Data.append('image', formData.image[0]);
-      setCategoryImage(formData.image[0]);
     }
     if (formData) {
       const Res = await request({ url: `${updateCategoryAPI}${data?._id}`, method: 'PUT', data: form_Data, headers: { 'content-type': 'multipart/form-data' } });
@@ -61,6 +57,7 @@ const FormCategory = ({ data }) => {
   return (
     <Form className='theme-form theme-form-2 mega-form' onSubmit={handleSubmit(data ? UpdateCategoryForm : addNewCategory)}>
       <Row>
+        <span onClick={()=>resetField('image')}>kfjghjdfgbd</span>
         <FormInputWrapper title={Name} md='9' lg='10'>
           <DivideInput inputtype='input' className='form-control' type='text' name='name' register={{ ...register('name', { required: true }) }} errors={errors.name} />
         </FormInputWrapper>

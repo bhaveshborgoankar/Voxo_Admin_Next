@@ -11,8 +11,8 @@ const Categories = ({ data }) => {
 export async function getServerSideProps(context) {
   const unique = context?.req?.cookies?.uat;
   const res = await request({ url: getCategoryAPI, token: unique });
-  const { data } = await res;
-  return { props: data };
+  const data = await res;
+  return { props: data?.data };
 }
 
 export default Categories;

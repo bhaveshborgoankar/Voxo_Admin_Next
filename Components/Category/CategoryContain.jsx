@@ -5,6 +5,7 @@ import { Card, CardBody, Col, Container, Row } from 'reactstrap';
 import { AllCategories } from '../../Constant';
 import { categoryStatusAPI } from '../../Constant/APIRoutes';
 import { CategoryColumn } from '../../Data/CategoryData';
+import DataNotFound from '../CommonComponents/DataNotFound';
 import StatusCheckBox from '../CommonComponents/StatusCheckBox';
 import TitleHeading from '../CommonComponents/TitleHeading';
 
@@ -27,7 +28,7 @@ const CategoryContain = ({ data }) => {
               <CardBody>
                 <div>
                   <div className='table-responsive table-desi'>
-                    {categoryData.length > 0 && (
+                    {categoryData.length > 0 ? (
                       <DataTable
                         data={categoryData.map((item, i) => ({
                           ...item,
@@ -41,6 +42,8 @@ const CategoryContain = ({ data }) => {
                         pointerOnHover
                         onRowClicked={(row) => router.push(`/category/edit/${row._id}`)}
                       />
+                    ) : (
+                      <DataNotFound />
                     )}
                   </div>
                 </div>

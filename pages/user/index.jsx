@@ -5,7 +5,7 @@ import UsersContain from '../../Components/Users/UsersContain';
 
 const AllUsers = ({ data }) => {
   if (!data) return null;
-  return <UsersContain data={data && data} />;
+  return <UsersContain data={data} />;
 };
 
 export async function getServerSideProps(context) {
