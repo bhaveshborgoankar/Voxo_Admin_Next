@@ -1,28 +1,38 @@
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, FormGroup, Row } from 'reactstrap';
 import { Btn } from '../../../AbstractElements';
 import { Back, Image, Name, Status, Submit } from '../../../Constant';
 import { createCategoryAPI, updateCategoryAPI } from '../../../Constant/APIRoutes';
+import ProductContext from '../../../Helper/ProductContext';
 import request from '../../../Utils/APIService';
 import DivideInput from '../../CommonComponents/DivideInput';
 import FormInputWrapper from '../../CommonComponents/FormInputWrapper';
 const FormCategory = ({ data }) => {
   const [activeStatus, setActiveStatus] = useState(data?.is_active ?? true);
   const router = useRouter();
+  const useReference = useRef(null);
+  const { categoryImage, setCategoryImage } = useContext(ProductContext);
   const {
     register,
     handleSubmit,
     resetField,
+    setValue,
+    getValues,
     formState: { errors },
   } = useForm({
     defaultValues: {
       name: data?.name ?? '',
       is_active: data?.is_active ?? true,
-      image: data ? data.image : '',
+      image: !categoryImage && data ? data.image : '',
     },
   });
+  useEffect(() => {
+    categoryImage && resetField('image');
+  }, [categoryImage]);
   const addNewCategory = async (formData) => {
     let form_Data = new FormData();
     form_Data.append('name', formData.name);
@@ -38,8 +48,7 @@ const FormCategory = ({ data }) => {
     }
   };
   const UpdateCategoryForm = async (formData) => {
-    console.log("🚀 ~ file: FormContain.jsx:41 ~ UpdateCategoryForm ~ formData", formData)
-    
+    console.log('formData.image', formData.image);
     let form_Data = new FormData();
     form_Data.append('name', formData.name);
     form_Data.append('is_active', formData.is_active);
@@ -57,12 +66,21 @@ const FormCategory = ({ data }) => {
   return (
     <Form className='theme-form theme-form-2 mega-form' onSubmit={handleSubmit(data ? UpdateCategoryForm : addNewCategory)}>
       <Row>
-        <span onClick={()=>resetField('image')}>kfjghjdfgbd</span>
         <FormInputWrapper title={Name} md='9' lg='10'>
           <DivideInput inputtype='input' className='form-control' type='text' name='name' register={{ ...register('name', { required: true }) }} errors={errors.name} />
         </FormInputWrapper>
         <FormInputWrapper title={Image} md='9' lg='10'>
-          <DivideInput inputtype='file' type='file' data={data} register={{ ...register('image', { required: data ? false : true }) }} name='image' errors={errors.image} reset={resetField} />
+          <DivideInput
+            inputtype='file'
+            type='file'
+            data={data}
+            register={{ ...register('image', { required: data ? false : true }) }}
+            name='image'
+            errors={errors.image}
+            reset={resetField}
+            setValue={setValue}
+            getValues={getValues}
+          />
         </FormInputWrapper>
         <FormInputWrapper title={Status} md='9' lg='10'>
           <FormGroup switch className='form-check form-switch'>
